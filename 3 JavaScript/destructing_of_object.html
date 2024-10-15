@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const user = {
+            firstName: "Nirbhay",
+            lastName: "Marde",
+            age: 19,
+            address: {
+                city: "Sangamner",
+                state: "Maharashtra",
+                pinCode: 422605
+            }
+        }
+
+        const { firstName: userFirstName, lastName: userLastName, age } = user;
+
+        const { address: { pinCode } } = user;
+
+        console.log(userFirstName);
+        console.log(userLastName);
+        console.log(age);
+        console.log(pinCode);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

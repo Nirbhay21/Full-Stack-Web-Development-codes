@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person {
+            constructor(firstName, lastName, age) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+
+            displayPersonInfo() {
+                console.log("First name:", this.firstName);
+                console.log("Last name:", this.lastName);
+                console.log("Age:", this.age);
+            }
+
+            get fullName() {
+                return `${this.firstName} ${this.lastName}`;
+            }
+
+            set fullName(value) {
+                this.firstName = value.split(" ")[0];
+                this.lastName = value.split(" ")[1];
+            }
+
+            method() {
+                console.log("Method of Person class");
+            }
+        }
+
+        class Student extends Person {
+            constructor(firstName, lastName, age, studying) {
+                super(firstName, lastName, age);
+                this.studying = studying;
+            }
+
+            displayStudentInfo() {
+                this.displayPersonInfo();
+                console.log("Studying:", this.studying);
+            }
+
+            method() {
+                console.log("Method of Student class");
+            }
+        }
+
+        class Employee extends Student {
+            constructor(firstName, lastName, age, education, salary, company) {
+                super(firstName, lastName, age, education);
+                this.salary = salary;
+                this.company = company;
+            }
+
+            displayEmployeeInfo() {
+                console.log("Employee name:", this.fullName);
+                console.log("Employee age:", this.age);
+                console.log("Employee education:", this.studying);
+                console.log("Employee salary:", this.salary);
+                console.log("Employee company:", this.company);
+            }
+
+            method() {
+                console.log("Method of Employee class");
+            }
+        }
+
+        const stud = new Student("Nirbhay", "Marde", 20, "B.Tech - CS");
+        console.dir(stud);
+
+        stud.displayStudentInfo();
+
+        console.log("\n");
+
+        const emp = new Employee("", "", 20, "B.Tech - CS", 120000, "Google");
+        emp.fullName = "Nirbhay Marde";
+        emp.displayEmployeeInfo();
+
+        console.log("")
+
+        emp.method();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

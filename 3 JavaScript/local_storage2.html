@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p,
+        h3 {
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="inputName">
+        Name: <input type="text" id="inputName" />
+    </label>
+    <br>
+    <label for="inputAge">
+        Age: <input type="text" id="inputAge" />
+    </label>
+    <br>
+    <br>
+    <h3>
+        <p>User Information -</p>
+        <p>Name: <span class="user-name"></span></p>
+        <p>age: <span class="user-age"></span></p>
+    </h3>
+    <script>
+        const inputName = document.querySelector("#inputName");
+        const inputAge = document.querySelector("#inputAge");
+
+        const userName = document.querySelector(".user-name");
+        const userAge = document.querySelector(".user-age");
+
+        inputName.addEventListener("input", (event)=>{
+            localStorage.setItem("userName", event.target.value);
+            userName.innerText = localStorage.getItem("userName");
+        });
+        inputAge.addEventListener("input", (event)=>{
+            localStorage.setItem("userAge", event.target.value);
+            userAge.innerText = localStorage.getItem("userAge");
+        });
+
+        userName.innerText = localStorage.getItem("userName");
+        userAge.innerText = localStorage.getItem("userAge");
+    </script>
+</body>
+
+</html>

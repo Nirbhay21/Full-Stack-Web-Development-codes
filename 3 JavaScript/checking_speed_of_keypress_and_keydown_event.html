@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p,
+        h3 {
+            margin: 0px;
+        }
+
+        .cols {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .column {
+            text-align: center;
+            background-color: rgba(0, 0, 255, 0.300);
+        }
+
+        .head-col {
+            border: 5px solid black;
+        }
+
+        p {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cols">
+        <div id="keypressColumn" class="column">
+            <h3 class="head-col">Counting (keypress)</span>
+
+        </div>
+        <div id="keydownColumn" class="column">
+            <h3 class="head-col">counting (keydown)</span>
+                
+        </div>
+    </div>
+    <script>
+        let keypressCount = 0;
+        let keydownCount = 0;
+        
+        const keypressColumn = document.querySelector("#keypressColumn");
+        const keydownColumn = document.querySelector("#keydownColumn");
+
+        document.addEventListener("keypress", () => {
+            const countNode = document.createElement("p");
+            countNode.innerText = `${++keypressCount}`;
+            keypressColumn.append(countNode);
+        });
+
+        document.addEventListener("keydown", () => {
+            const countNode = document.createElement("p");
+            countNode.innerText = `${++keydownCount}`;
+            keydownColumn.append(countNode);
+        });
+    </script>
+</body>
+
+</html>

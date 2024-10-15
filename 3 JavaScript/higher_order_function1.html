@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function callFunction(func) {
+            func();
+            console.log("This is higher order function.");
+            console.dir(func);
+            return func;
+        }
+
+        const result = callFunction(
+            function () {
+                console.log("This is function.");
+                return 0;
+            }
+        );
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

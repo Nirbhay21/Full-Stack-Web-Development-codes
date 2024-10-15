@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            position: absolute;
+            top: 0px;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+        .progress-bar .progress {
+            width: 50%;
+            height: 100%;
+            background-color: green;
+        }
+
+        #character {
+            margin-bottom: 0.8em;
+            font-size: 8em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+    <h1 id="character">a</h1>
+    <script>
+        const character = document.querySelector("#character");
+
+        let randomAlphabet = String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+        character.innerText = randomAlphabet;
+
+        window.addEventListener("keydown", (event) => {
+            if (event.key === randomAlphabet) {
+                randomAlphabet = String.fromCharCode(Math.floor(Math.random() * 25) + 97);
+                character.innerText = randomAlphabet;
+                character.style.color = "black";
+            } else {
+                character.style.color = "red";
+            }
+        });
+
+        let temp = Date.now();
+        // const animateProgressBar = (currentTime) => {
+        //     requestAnimationFrame(animateProgressBar);
+
+        //     if (Date.now() < temp + 2000) {
+        //         return;
+        //     }
+        //     temp = Date.now();
+
+        //     console.log("Hello");
+        // }
+
+        let lastPaintTime = 0;
+
+        // let animationTime = 100;
+
+        // function animateProgressBar(currentTime) {
+        //     requestAnimationFrame(animateProgressBar);
+
+        //     if (currentTime < lastPaintTime + animationTime) {
+        //         return;
+        //     }
+
+        //     console.log("HELLO");
+
+        //     lastPaintTime = currentTime;
+        // }
+
+        // requestAnimationFrame(animateProgressBar);
+    </script>
+</body>
+
+</html>

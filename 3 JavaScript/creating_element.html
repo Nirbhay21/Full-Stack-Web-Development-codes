@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image-container {
+            padding: 1rem;
+            display: flex;
+            flex-flow: row wrap;
+            border: 5px solid black;
+        }
+
+        .border-image {
+            /* width: 50px; */
+            border: 2px solid black;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        img {
+            transition: all 100ms;
+        }
+
+        img:hover {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+
+    </div>
+    <script>
+        const imageContainer = document.querySelector(".image-container");
+        imageContainer.innerHTML += `<img id="img1" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Pokemon Image 1">`;
+        const img1 = document.querySelector("#img1");
+
+        for (let i = 2; i <= 500; i++) {
+            const imageClone = img1.cloneNode();
+            imageClone.id = `img${i}`;
+            imageClone.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`;
+            imageClone.alt = `Pokemon Image ${i}`;
+            imageClone.className = "border-image";
+            imageContainer.appendChild(imageClone);
+        }
+
+        img1.className = "border-image";
+    </script>
+</body>
+
+</html>

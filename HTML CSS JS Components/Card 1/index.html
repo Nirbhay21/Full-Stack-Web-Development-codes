@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <style>
+        h3,
+        p,
+        body {
+            margin: 0px;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card {
+            padding: 1.6em;
+            max-width: 350px;
+            display: flex;
+            gap: 1em;
+            flex-direction: column;
+            background-color: #15273F;
+            box-sizing: border-box;
+            border-radius: 16px;
+        }
+
+        .card .card-head-image {
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .card .card-name {
+            font-size: 1.3em;
+            color: #FFFFFF;
+        }
+        
+        .card .card-description {
+            font-size: 1.08em;
+            color: #889DB8;
+        }
+
+        .card .card-values {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .value,
+        .time-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .card .card-values .value img {
+            margin-right: 8px;
+        }
+
+        .card .card-values .time-left img {
+            margin-right: 4px;
+        }
+
+        .card .card-values .value {
+            color: #27FFFF;
+        }
+
+        .card .card-values .time-left {
+            color: #8EA6C8;
+        }
+
+        hr {
+            width: 100%;
+            border-color: #2F4159;
+        }
+
+        .card-footer .avatar-img {
+            width: 46px;
+            border-radius: 50%;
+            border: 1px solid white;
+        }
+
+        .card-footer .creator-name {
+            margin-left: 1.2em;
+            color: #90A5C8;
+        }
+
+        .card .card-footer {
+            display: flex;
+            align-items: center;
+        }
+
+        .card-footer .creator-name span {
+            color: #F1FCFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img class="card-head-image" src="images/image-equilibrium.jpg" alt="card_head_image">
+        <h3 class="card-name">Equilibrium #3429</h3>
+        <p class="card-description">Our Equilibrium collection promotes balance and calm.</p>
+        <div class="card-values">
+            <div class="value">
+                <img src="images/icon-ethereum.svg" alt="ethereum-icon">
+                <span>0.041 ETH</span>
+            </div>
+            <div class="time-left">
+                <img src="images/icon-clock.svg" alt="clock-icon">
+                <span>3 Days Left</span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-footer">
+            <img class="avatar-img" src="images/image-avatar.png" alt="avatar-img">
+            <p class="creator-name">Creation of <span>Jules Wyvern</span></p>
+        </div>
+    </div>
+</body>
+
+</html>

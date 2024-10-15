@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const heading = document.createElement("h1");
+        heading.innerText = "This is Heading - (H1)";
+        heading.id = "first_heading";
+        heading.className = "heading";
+
+        heading.style.cssText = `
+            margin: 0px;
+            padding: 1rem; 
+            color: white;
+            background-color: black;
+            font-size: 3.6rem;
+        `;
+
+        document.body.append(heading);
+
+    </script>
+</body>
+
+</html>

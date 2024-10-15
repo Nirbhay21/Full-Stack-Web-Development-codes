@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            padding: 2rem;
+            display: grid;
+            gap: 1.2rem;
+            box-sizing: border-box;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            background-color: rgb(44, 48, 67);
+        }
+
+        .grid-item1 {
+            background-color: rgb(252,96,87);
+        }
+
+        .grid-item2 {
+            background-color: rgb(253,160,97);
+        }
+
+        .grid-item3 {
+            background-color: rgb(52,218,186);
+        }
+
+        .grid-item4 {
+            background-color: rgb(27,193,161);
+
+        }
+        .grid-item5 {
+            background-color: rgb(1,167,135);
+
+        }
+        .grid-item6 {
+            background-color: rgb(253,160,97);
+
+        }
+        .grid-item7 {
+            background-color: rgb(252,96,87);
+
+        }
+        .grid-item8 {
+            grid-column: 3 / 6;
+            background-color: rgb(253,130,92);
+            
+        }
+        .grid-item9 {
+            grid-column: 1 / 6;
+            background-color: rgb(52,218,186);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-item1"></div>
+        <div class="grid-item2"></div>
+        <div class="grid-item3"></div>
+        <div class="grid-item4"></div>
+        <div class="grid-item5"></div>
+        <div class="grid-item6"></div>
+        <div class="grid-item7"></div>
+        <div class="grid-item8"></div>
+        <div class="grid-item9"></div>
+    </div>
+</body>
+
+</html>

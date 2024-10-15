@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Project</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="overflow-scroll">
+    <header>
+        <!-- NavBar -->
+        <nav class="py-3 px-6 flex bg-white justify-between items-center">
+            <a href="#" id="brand" class="flex gap-2 items-center flex-1">
+                <img src="images/brand_logo.png" alt="brand_logo" class="object-cover">
+                <span class="font-bold font-display text-lg">ToDesktop</span>
+            </a>
+            <div id="nav-menu" class="gap-8 xl:gap-12 hidden lg:flex">
+                <a href="#" class="font-semibold hover:text-primary">Pricing</a>
+                <a href="#" class="font-semibold hover:text-primary">Docs</a>
+                <a href="#" class="font-semibold hover:text-primary">Changelog</a>
+                <a href="#" class="font-semibold hover:text-primary">Blogs</a>
+                <a href="#" class="font-semibold hover:text-primary">Login</a>
+            </div>
+            <div class="flex-1">
+                <button
+                    class="px-6 py-2 hidden lg:flex gap-3 items-center float-right border-gray-400 border-2 rounded-lg hover:border-gray-600">
+                    <img src="images/electron_logo.svg" alt="">
+                    <span>Electron Developers</span>
+                    <img src="images/right_arrow.svg" alt="right_arrow_icon" width="18" class="mt-0.5">
+                </button>
+            </div>
+
+            <button id="menu-btn" class="p-2 lg:hidden">
+                <span class="text-gray-600 font-bold text-xl">&#9776;</span>
+            </button>
+
+            <!-- HamBurger Dialog -->
+            <div id="hamburger-menu" class="px-6 py-3 hidden fixed bg-white inset-0 md:hidden">
+                <div class="flex justify-between mb-4">
+                    <a href="#" id="brand" class="flex gap-2 items-center">
+                        <img src="images/brand_logo.png" alt="brand_logo" class="object-cover">
+                        <span class="font-bold font-display text-lg">ToDesktop</span>
+                    </a>
+                    <button id="close-menu-btn" class="pr-1 pb-2">
+                        <span class="text-4xl font-medium">&times;</span>
+                    </button>
+                </div>
+                <!-- HamBurger menu (links) -->
+                <div class="pr-2">
+                    <a href="#pricing" class="font-medium block m-1 px-4 py-2 hover:bg-stone-100 rounded-md">Pricing</a>
+                    <a href="#" class="font-medium block m-1 px-4 py-2 hover:bg-stone-100 rounded-md">Docs</a>
+                    <a href="#" class="font-medium block m-1 px-4 py-2 hover:bg-stone-100 rounded-md">Changelog</a>
+                    <a href="#" class="font-medium block m-1 px-4 py-2 hover:bg-stone-100 rounded-md">Blogs</a>
+                    <a href="#" class="font-medium block m-1 px-4 py-2 hover:bg-stone-100 rounded-md">Login</a>
+
+                    <hr class="border-gray-400 border mt-2">
+
+                    <button class="w-full mt-4 mx-1 pl-4 py-3 flex gap-3 hover:bg-stone-100 rounded-md">
+                        <img src="images/electron_logo.svg" alt="electron_logo">
+                        <span>Electron Developers</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <div id="hero" class="min-h-screen bg-gradient-to-b from-purple-50 via-orange-50 to-transparents sm:pt-5">
+            <div id="hero-container"
+                class="max-w-4xl mx-auto px-6 pt-5 pb-32 flex flex-col sm:text-center sm:items-center">
+                <div id="version-text"
+                    class="w-fit my-6 flex gap-2 items-center border border-yellow-300 bg-yellow-50 px-3 py-1 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 group transition duration-75">
+                    <i class="w-2 h-2 bg-yellow-400 rounded-full border-yellow-600 border block"></i>
+                    <p class="font-medium text-yellow-600">v0.21.1: <span class="text-yellow-800">Find-in-page bug
+                            fixes</span></p>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="18" height="18" x="0" y="0" viewBox="0 0 492.004 492.004"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve"
+                        class="fill-yellow-600 group-hover:translate-x-1 transition duration-300">
+                        <g>
+                            <path
+                                d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
+                                fill="inherit" opacity="1" data-original="#000000"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div id="hero-features" class="hidden sm:flex gap-8 my-5">
+                    <div class="flex gap-2 items-center text-gray-500">
+                        <img src="images/code_file_icon.svg" alt="code_file_icon" width="18" height="18">
+                        <span>Code Optional</span>
+                    </div>
+                    <div class="flex gap-2 items-center text-gray-500">
+                        <img src="images/drag_and_drop_icon.svg" alt="drag_and_drop_icon" width="18" height="18">
+                        <span>Drag & drop builder</span>
+                    </div>
+                    <div class="flex gap-2 items-center text-gray-500">
+                        <img src="images/laptop_icon.svg" alt="laptop_icon" width="18" height="18">
+                        <span>Windows, Mac, Linux</span>
+                    </div>
+                </div>
+                <h1 class="font-semibold text-4xl leading-tight mb-4 sm:mb-8 sm:text-7xl sm:leading-[1.3]">Web app to
+                    desktop app in minutes</h1>
+                <p class="text-xl sm:text-2xl text-gray-800">Take your web app codebase and transform it into a cross
+                    platform desktop
+                    app with
+                    native functionality.</p>
+                <div id="buttons-container" class="mt-12 flex  gap-4 flex-col sm:flex-row">
+                    <button
+                        class="px-8 py-3 font-semibold rounded-lg text-white bg-primary shadow-sm hover:opacity-90">Download
+                        now</button>
+                    <button
+                        class="px-8 py-3 font-semibold rounded-lg bg-white border shadow-sm border-gray-400 hover:border-gray-800">Read
+                        Docs</button>
+                </div>
+            </div>
+            <!-- Companies Container -->
+            <div id="companies-container">
+                <div id="companies-title" class="flex justify-center gap-4 mb-8">
+                    <img src="images/down_arrow_icon.svg" alt="down_arrow_icon" class="translate-y-2">
+                    <h3 class="font-semibold">APPS POWERED BY TODESKTOP</h3>
+                    <img src="images/down_arrow_icon.svg" alt="down_arrow_icon" class="translate-y-2 -scale-x-100">
+                </div>
+                <div id="companies-lines-group" class="flex flex-col gap-4">
+                    <div id="line1" class="flex gap-4 w-screen -translate-x-48">
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                    </div>
+                    <div id="line2" class="flex gap-4 w-screen -translate-x-36">
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                    </div>
+                    <div id="line3" class="flex gap-4 w-screen -translate-x-48">
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                        <div
+                            class="p-5 flex flex-col min-w-24 min-h-24 items-center justify-center border border-gray-300 rounded-xl">
+                            <img src="./images/asset 3.png" alt="company_icon" class="w-12 h-12 md:w-16 md:h-16">
+                            <span class="text-xs md:text-base font-semibold">Unbounce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="h-[1000px]"></div>
+    </main>
+</body>
+
+</html>

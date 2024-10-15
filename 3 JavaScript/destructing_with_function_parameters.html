@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const func = ({ 4: a }) => {
+            document.write("First element of array - ", a, "<br>");
+        }
+
+        function printObj({ firstName, lastName }) {
+            document.write("firstName = ", firstName, "<br>")
+            document.write("lastName = ", lastName, "<br>")
+        }
+
+        const user = {
+            firstName: "Nirbhay",
+            lastName: "Marde",
+            age: 19
+        };
+
+        func([10, 245, 3, 4, 5]);
+        printObj(user);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

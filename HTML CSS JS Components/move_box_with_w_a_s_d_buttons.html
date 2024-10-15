@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            top: 0px;
+            left: 0px;
+            position: absolute;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector(".box");
+
+        let topPosition = 0;
+        let leftPosition = 0;
+
+        const increment = 5;
+
+        window.addEventListener("keypress", (event) => {
+            switch (event.code) {
+                case "KeyW":
+                    if (topPosition > 0) {
+                        topPosition = Math.max(topPosition - increment, 0);
+                    }
+                    break;
+                case "KeyA":
+                    if (leftPosition > 0) {
+                        leftPosition = Math.max(leftPosition - increment, 0);
+                    }
+                    break;
+                case "KeyS":
+                    if (topPosition < window.innerHeight - box.clientHeight) {
+                        topPosition = Math.min(window.innerHeight - box.clientHeight, topPosition + increment);
+                    }
+                    break;
+                case "KeyD":
+                    if (leftPosition < window.innerWidth - box.clientWidth) {
+                        leftPosition = Math.min(window.innerWidth - box.clientWidth, leftPosition + increment);
+                    }
+                    break;
+            }
+            box.style.top = `${topPosition}px`;
+            box.style.left = `${leftPosition}px`;
+        });
+    </script>
+</body>
+
+</html>

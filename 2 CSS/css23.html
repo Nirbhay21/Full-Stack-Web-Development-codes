@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .main-container {
+            width: 90vw;
+            height: 100vh;
+            margin: 0px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(32, 33, 36);
+        }
+
+        .margin-box {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(172, 128, 83);
+            border: 4px dashed black;
+        }
+
+        .border-box {
+            width: 75%;
+            height: 75%;
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(227, 194, 130);
+            border: 4px solid black;
+        }
+
+        .padding-box {
+            width: 65%;
+            height: 65%;
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(184, 195, 127);
+            border: 4px dashed black;
+        }
+        
+        .content-box {
+            width: 50%;
+            height: 50%;
+            position: relative;
+            background-color: rgb(136, 178, 190);
+            border: 4px solid black;
+        }
+
+        h2 {
+            position: absolute;
+            font-size: calc(1.6vw + 1.2vh);
+            top: 1%;
+            left: 1%;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="margin-box">
+            <h2>Margin</h2>
+            <div class="border-box">
+                <h2>Border</h2>
+                <div class="padding-box">
+                    <h2>Padding</h2>
+                    <div class="content-box">
+                        <h2>Content</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

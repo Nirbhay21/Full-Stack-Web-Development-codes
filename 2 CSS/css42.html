@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 750px;
+            height: 100vh;
+            padding: 3rem;
+            margin: auto;
+            display: grid;
+            gap: 3rem;
+            box-sizing: border-box;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .grid-item {
+            background-color: #00DBDE;
+            background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+            transition: all 1s;
+        }
+
+        .item1:hover {
+            transform: translateX(-30px);
+        }
+
+        .item2:hover {
+            transform: translateY(-30px);
+        }
+
+        .item3:hover:hover {
+            transform: perspective(120px) translateZ(-20px);
+        }
+
+        .item4:hover {
+            transform: perspective(520px) rotateX(50deg);
+        }
+
+        .item5:hover {
+            transform: perspective(520px) rotateY(50deg);
+        }
+
+        .item6:hover {
+            transform: rotateZ(20deg);
+        }
+        .item7:hover {
+            transform: scaleX(1.2);
+        }
+        .item8:hover {
+            transform: scaleY(1.2);
+        }
+        .item9:hover {
+            transform: perspective(600px) scaleZ(2) rotateY(50deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-item item1">TranslateX(-30px)</div>
+        <div class="grid-item item2">TranslateY(-30px)</div>
+        <div class="grid-item item3">perspective(120px) translateZ(-20px)</div>
+        <div class="grid-item item4">perspective(120px) rotateX(50deg)</div>
+        <div class="grid-item item5">perspective(520px) rotateY(50deg)</div>
+        <div class="grid-item item6">rotateZ(20deg)</div>
+        <div class="grid-item item7">scaleX(1.2)</div>
+        <div class="grid-item item8">scaleY(1.2)</div>
+        <div class="grid-item item9">perspective(300px) scaleZ(-30) translateZ(-12px)</div>
+    </div>
+</body>
+
+</html>

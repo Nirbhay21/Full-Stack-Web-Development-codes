@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
+    <style>
+        body {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is next page</h1>
+    <h3>
+        <p id="para"></p>
+    </h3>
+</body>
+
+<script>
+    const para = document.querySelector("#para");
+
+    const params = location.search.split("?")[1];
+    const paramsArr = params.split("&");
+
+    const urlParams = {};
+
+    for (let param of paramsArr) {
+        urlParams[param.split("=")[0]] = param.split("=")[1];
+    }
+
+    console.log(urlParams);
+
+    let paramsStr = "";
+
+    for (let key in urlParams) {
+        paramsStr += `${key}=${urlParams[key]}\n`;
+    }
+
+    para.innerText = `Value of URL params -\n${paramsStr}`;
+</script>
+
+</html>

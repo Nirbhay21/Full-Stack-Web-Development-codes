@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script type="module">
+        var a = "Global variable";
+        let tempVar1 = false;
+        let tempVar2 = false;
+        parentFunction();
+
+        function parentFunction() {
+            let parentVar1 = 10;
+            childFunction();
+            return;
+
+            function childFunction() {
+                let childVar1 = 100;
+                let childVar2 = 200;
+                // document.write("childVar1 = ", childVar1, "<br>");
+                // document.write("childVar2 = ", childVar2, "<br>");
+                // document.write("Value of parentVar1 = ", parentVar1, "<br>");
+                // document.write("Value of parentVar2 = ", parentVar2, "<br>");
+
+                grandChildFunction();
+
+                function grandChildFunction() {
+                    document.write("This is grand Child function");
+                    document.write("<br>", a);
+                }
+            }
+
+            let parentVar2 = 20;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

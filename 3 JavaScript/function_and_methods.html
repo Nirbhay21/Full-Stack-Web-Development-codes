@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        const num1 = 12, num2 = 8;
+        console.log("12 + 8 = " + add(num1, num2));
+
+        const math = { 
+            PI: 22 / 7,
+            add: function (a, b) {
+                return a + b;
+            },
+            subtract: function (a, b) {
+                return a - b;
+            },
+            squareOf: function (n) {
+                return n * n;
+            },
+            cubeOf(n) {
+                return n * n * n;
+            }
+        };
+
+        console.log("math.PI = ", math.PI);
+        console.log("math.add(12, 12) = ", math.add(12, 12));
+        console.log("math.subtract(10, 12) = ", math.subtract(10, 12));
+        console.log("math.squareOf(9) = ", math.squareOf(9));
+        console.log("math.cubeOf(5) = ", math.cubeOf(5));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

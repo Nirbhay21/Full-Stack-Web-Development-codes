@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const colors = ["Red", "Green", "Blue", "Black", "Orange", "White"];
+
+        const [firstColor] = colors;
+        const [color1, color2] = colors;
+        const [, , blueColor] = colors;
+
+        const { 2: thirdColor } = colors;
+
+        document.write("firstColor = ", firstColor, "<br>");
+        document.write("color1 = ", color1, "<br>");
+        document.write("color2 = ", color2, "<br>");
+        document.write("blueColor = ", blueColor, "<br>");
+        document.write("thirdColor = ", thirdColor, "<br>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

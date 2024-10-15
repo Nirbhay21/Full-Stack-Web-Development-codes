@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const CreateUser = class {
+            constructor() {
+                this.lastName = null;
+                this.firstName = null;
+            }
+
+            set fullName(value) {
+                [this.firstName, this.lastName] = value.split(" ");
+            }
+
+            get fullName() {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+
+        const user = new CreateUser();
+        user.fullName = "Nirbhay Marde";
+        console.log(user);
+        console.log("Full name:", user.fullName);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

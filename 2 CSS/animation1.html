@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .box {
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            background-color: black;
+        }
+
+        h1 {
+            margin: 0px;
+            padding: 0px 25px;
+            color: black;
+            font-size: calc(12vw + 5vh);
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation-name: text-shadow-effect;
+            animation-duration: 2.5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            text-shadow: 3px 0px 0px rgb(136, 255, 0), -3px 0px 0px rgb(0, 102, 255), 0px 3px 0px rgb(246, 255, 0), 0px -3px 0px rgb(0, 234, 255);
+        }
+
+        @keyframes text-shadow-effect {
+            from {
+                text-shadow: 3px 0px 2px rgb(136, 255, 0), -3px 0px 2px rgb(0, 102, 255), 0px 3px 2px rgb(246, 255, 0), 0px -3px 2px rgb(0, 234, 255);
+            }
+
+            to {
+                text-shadow: 3px 0px 12px rgb(136, 255, 0), -3px 0px 12px rgb(0, 102, 255), 0px 3px 12px rgb(246, 255, 0), 0px -3px 12px rgb(0, 234, 255);
+                /* box-shadow: 0.1px 0.1px 30px 10px white; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Hello</h1>
+    </div>
+</body>
+
+</html>

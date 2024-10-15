@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example of intersection observer</title>
+    <style>
+        .card {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+
+        .temp_div {
+            height: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+
+    </div>
+    <div class="temp_div"></div>
+    <script>
+        const card = document.querySelector(".card");
+
+        let isVisible = false;
+
+        const observer = new IntersectionObserver((element) => {
+            isVisible = element[0].isIntersecting;
+        });
+
+        observer.observe(card);
+
+        setInterval(() => {
+            if (isVisible) {
+                console.log("Card is visible");
+            } else {
+                console.log("Card is not visible");
+            }
+        }, 500);
+
+    </script>
+</body>
+
+</html>

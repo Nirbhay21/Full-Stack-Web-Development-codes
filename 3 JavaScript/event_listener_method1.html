@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: red;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 onclick="console.log('Heading Clicked')">Heading - H1</h1>
+    <div class="box" ondblclick="printHello()"></div>
+    <script>
+        const printHello = function () {
+            console.log("HELLO");
+        }
+    </script>
+</body>
+
+</html>

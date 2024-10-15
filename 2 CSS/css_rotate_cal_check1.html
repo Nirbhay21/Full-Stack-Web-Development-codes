@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background-color: black;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            color: white;
+            background-color: black;
+            position: relative;
+            border: 5px solid white;
+        }
+
+        .container .box {
+            position: absolute;
+            inset: 1rem;
+        }
+
+        .container #box1 {
+            transform: rotate(0deg);
+        }
+
+        .container #box2 {
+            transform: rotate(90deg);
+        }
+
+        .container #box3 {
+            transform: rotate(180deg);
+        }
+
+        .container #box4 {
+            transform: rotate(270deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="box1" class="box">Hello</div>
+        <div id="box2" class="box">Hello</div>
+        <div id="box3" class="box">Hello</div>
+        <div id="box4" class="box">Hello</div>
+    </div>
+</body>
+
+</html>

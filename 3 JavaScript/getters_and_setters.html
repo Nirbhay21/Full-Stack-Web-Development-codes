@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const user = {
+            firstName: null,
+            lastName: null,
+            // age: null,
+
+            setFullName: function (fullName) {
+                console.log(fullName.split(" "));
+                this.firstName = fullName.split(" ")[0];
+                this.lastName = fullName.split(" ")[1];
+            },
+
+            getFullName: function () {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+
+        user.setFullName("Nirbhay Marde");
+        const fullName = user.getFullName();
+        
+        console.log(fullName);
+
+        console.log(user);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

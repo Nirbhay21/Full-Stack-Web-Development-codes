@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p u {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p name="para1">
+        This is <u>   first   </u> Paragraph
+    </p>
+    <p name="para2">This is second Paragraph</p>
+    <p name="para3">This is third Paragraph</p>
+    <script>
+        const paragraph1 = document.querySelector("[name=para1]");
+
+        console.log("paragraph1.innerText - ", paragraph1.innerText);
+        console.log("paragraph1.innerHTML - ", paragraph1.innerHTML);
+        console.log("paragraph1.textContent - ", paragraph1.textContent);
+    </script>
+</body>
+
+</html>

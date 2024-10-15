@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>
+        <ul id="list">
+            <li>Item - 1</li>
+            <li>Item - 2</li>
+            <li>Item - 3</li>
+            <li>Item - 4</li>
+            <li>Item - 5</li>
+            <li>Item - 6</li>
+        </ul>
+        <h3>List End</h3>
+    </h2>
+    <script>
+        const list = document.querySelector("#list");
+
+        const list3rdChild = list.children[2];
+        console.log(list);
+
+        console.log(list3rdChild.previousElementSibling);
+        console.log(list3rdChild.nextElementSibling);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            overflow: scroll;
+            background-color: red;
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            background-color: blue;
+        }
+
+        .height {
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="height"></div>
+    </div>
+
+    <div class="height"></div>
+
+    <script>
+        const container = document.querySelector(".container");
+        const box = document.querySelector(".box");
+
+        const observer = new IntersectionObserver((entires) => {
+            if (entires[0].isIntersecting) {
+                console.log("Box is visible in container");
+            } else {
+                console.log("Box is not visible in container");
+            }
+        }, {
+            root: container,
+            threshold: 1,
+            rootMargin: "-10% -10% -10% -10%"
+        });
+
+        observer.observe(box);
+    </script>
+</body>
+
+</html>

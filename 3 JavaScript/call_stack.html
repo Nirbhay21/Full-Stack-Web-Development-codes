@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const name = "Nirbhay";
+        document.write("Printing name by global - ", name, "<br>");
+        
+        func1();
+
+        function func1(){
+            func2();
+            document.write("Printing name by func1() - ", name, "<br>");
+        }
+        function func2(){
+            func3();
+            document.write("Printing name by func2() - ", name, "<br>");
+        }
+        function func3(){
+            func4();
+            document.write("Printing name by func3() - ", name, "<br>");
+        }
+        function func4(){
+            func5();
+            document.write("Printing name by func4() - ", name, "<br>");
+        }
+        function func5(){
+            document.write("Printing name by func5() - ", name, "<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

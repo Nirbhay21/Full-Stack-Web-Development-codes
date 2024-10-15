@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button id="resolvePromiseBtn">Resolve Promise</button>
+    <button id="rejectPromiseBtn">Reject Promise</button>
+    <script>
+        const p = new Promise((resolve, rejected) => {
+            resolvePromiseBtn.addEventListener("click", () => {
+                resolve("Promise Resolved.");
+            });
+            rejectPromiseBtn.addEventListener("click", () => {
+                rejected("Promise Rejected.");
+            });
+        }); 
+
+        p.then((data) => { // This method is called when promise will fulfill 
+            console.log("DONE (Promise Resolved)");
+            console.log("data - ", data);
+        }).catch((error) => {  // This method is called when promise will reject 
+            console.log("ERROR (Promise Rejected)");
+            console.log("error - ", error);
+        }).finally(() => {  // This method will called when promise get's settled (fulfilled or rejected).
+            console.log("Promise Settled");
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background-color: rgb(214,224,239);
+        }
+        .card{
+            width: 450px; 
+            height: 500px; 
+            display: flex;
+            padding: 2rem;
+            gap: 1rem;
+            align-items: center;
+            box-sizing: border-box;
+            flex-direction: column;
+            border-radius: 20px;
+            box-shadow: 0px 0px 16px 0px rgb(128, 153, 160);
+            background-color: white;
+        }
+        .card .product-image{
+            width: 100%;
+            height: 70%;
+            border-radius: 20px;
+        }
+
+        .prize-box{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .product-name{
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .product-prize{
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(13,109,222);
+        }
+        .shooping-icon{
+            width: 42px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <img class="product-image" src="images/shoes_image.jpg" alt="">
+            <span class="product-name">Nike Running - Neon</span>
+            <div class="prize-box">
+                <span class="product-prize">$ 210.00</span>
+                <img class="shooping-icon" src="images/shooping_icon.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

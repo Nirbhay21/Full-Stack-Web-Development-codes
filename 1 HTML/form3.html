@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form>
+      <h1>Event Registration</h1>
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" /><br /><br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" /><br /><br />
+      <label for="tel">Phone:</label><br />
+      <input type="phone" id="phone" name="phone" /><br /><br />
+      <label for="occupation_selector">Occupation:</label><br />
+      <select id="occupation_selector" name="occupation_selector">
+        <option value="Student">Student</option>
+        <option value="Business">Business</option>
+        <option value="Service">Service</option>
+        <option value="Unemployed">Unemployed</option>
+        <option value="Self employed">Self employed</option> </select
+      ><br /><br />
+      <label>Topics of interest:</label><br /><br />
+      <input type="checkbox" name="html" id="html" /><br />
+      <label for="html">HTML</label><br /><br />
+      <input type="checkbox" name="css" id="css" /><br />
+      <label for="css">CSS</label><br /><br />
+      <input type="checkbox" name="javascript" id="javascript" /><br />
+      <label for="javascript">JavaScript</label><br />
+      <br />
+      <label for="comment">Comments: </label><br />
+      <textarea
+        id="comment"
+        name="comment"
+        placeholder="Enter your comments here:"
+        cols="24"
+        rows="7"
+      ></textarea>
+      <button>Register</button>
+    </form>
+  </body>
+</html>

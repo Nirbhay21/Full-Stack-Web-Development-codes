@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .start-screen {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .start-screen .quiz-time-image {
+            width: 60%
+        }
+
+        .start-screen .start-button {
+            padding: 0.86em 1.8em;
+            font-size: 1.32em;
+            color: white;
+            background-color: #35BD3A;
+            border-style: none;
+            border-radius: 0.26em;
+            font-weight: 600;
+            box-shadow: 0.28em 0.28em 0em 0em #01AB08;
+            font-family: inherit;
+        }
+
+        .start-screen .start-button:hover {
+            background-color: #24c92a;
+            box-shadow: 0.28em 0.28em 0em 0em #009f05;
+        }
+
+        .start-screen .start-button:active {
+            background-color: #00df07;
+            box-shadow: 0.28em 0.28em 0em 0em #007a04;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <div class="start-screen">
+        <img class="quiz-time-image" src="quiz_time.svg" width="60%" alt="quiz-time-logo">
+        <button class="start-button">
+            Start Now >>>
+        </button>
+    </div> -->
+
+    <script>
+        function startQuiz() {
+            console.log("Quiz is started");
+        }
+
+        function getStartFragment() {
+            const startFragment = document.createDocumentFragment();
+
+            const startScreen = document.createElement("div");
+            startScreen.classList.add("start-screen");
+
+            const quizTimeImage = document.createElement("img");
+            quizTimeImage.classList.add("quiz-time-image");
+            quizTimeImage.src = "quiz_time.svg";
+            const startButton = document.createElement("button");
+            startButton.classList.add("start-button");
+            startButton.innerText = "Start Now >>>";
+            startButton.addEventListener("click", startQuiz);
+
+            startScreen.appendChild(quizTimeImage);
+            startScreen.appendChild(startButton);
+
+            startFragment.appendChild(startScreen);
+
+            return startFragment;
+        }
+
+        const startFragment = getStartFragment();
+
+        document.body.appendChild(startFragment);
+    </script>
+</body>
+
+</html>

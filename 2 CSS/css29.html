@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --bg-color: black;
+        }
+        .container{
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: var(--bg-color, black); 
+        }
+
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        #box2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        #box3{
+            height: 200px;
+            width: 200px;
+            background-color: green;
+        }
+        h1{
+            --color: white;
+            color: var(--color);
+            margin: 0px;
+            padding: 8px;
+            font-size: 120px;
+            text-align: center;
+            text-shadow: 2px 2px 3px green, -2px 2px 3px red, 2px -2px 3px yellow, -2px -2px 3px blue;
+            background-color: var(--color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+    </div>
+    <h1>Welcome to Code Help</h1>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Function Expression - 
+        // const pow = function (num, power) {
+        //     let result = 1;
+        //     for (let i = 1; i <= power; i++) {
+        //         result *= num;
+        //     }
+        //     return result;
+        // }
+
+        // Function Declaration - 
+        // function pow (num, power) {
+        //     let result = 1;
+        //     for (let i = 1; i <= power; i++) {
+        //         result *= num;
+        //     }
+        //     return result;
+        // }
+
+        // Arrow Function Expression - 
+        const pow = (num, power) => {
+            let result = 1;
+            for (let i = 1; i <= power; i++) {
+                result *= num;
+            }
+            return result;
+        }
+
+        const math = {
+            add: (a, b) => {
+                return a + b;
+            }
+        }
+
+        console.log("2 ^ 10 = ", pow(2, 10));
+        console.log("math.add(12, 20) = ", math.add(12, 20));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

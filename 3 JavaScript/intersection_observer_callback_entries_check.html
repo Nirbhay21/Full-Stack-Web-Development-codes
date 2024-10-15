@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            overflow: scroll;
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            background-color: aqua;
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1">Box - 1</div>
+        <div class="box" id="box2">Box - 2</div>
+        <div class="box" id="box3">Box - 3</div>
+        <div class="box" id="box4">Box - 4</div>
+        <div class="box" id="box5">Box - 5</div>
+    </div>
+    <script>
+        const container = document.querySelector(".container");
+        const boxes = document.querySelectorAll(".box");
+
+        const visibleBoxes = [];
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    visibleBoxes.push(entry.target.id);
+                } else {
+                    visibleBoxes.splice((visibleBoxes.indexOf(entry.target.id) >= 0) ? visibleBoxes.indexOf(entry.target.id) : visibleBoxes.length, 1);
+                }
+            });
+
+            console.log("Visible boxes inside container are:", visibleBoxes);
+        }, {
+            root: container
+        });
+
+        for (const box of boxes) {
+            observer.observe(box);
+        }
+
+    </script>
+</body>
+
+</html>

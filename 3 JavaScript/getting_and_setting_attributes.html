@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="ID" name="NAME" value="VALUE" class="box" key="value" time></div>
+    <script>
+        const div = document.querySelector("#ID");
+
+        for(let attribute of div.attributes){
+            document.write(`${attribute.name} = ${attribute.value}<br>`);
+        }
+    </script>
+</body>
+
+</html>

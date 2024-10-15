@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h2>Job Application</h2>
+      <label name="name">Name: </label>
+      <input type="text" id="name" name="name" /><br /><br />
+      <label name="email">Email: </label>
+      <input type="email" id="email" name="email" /><br /><br />
+      <label name="phone">Phone no: </label>
+      <input type="tel" id="phone" name="phone" /><br /><br />
+      <label for="resume_file">Resume: </label>
+      <input type="file" id="resume_file" name="resume" /><br /><br />
+      <label for="experience_years">Experience (years):</label>
+      <input
+        type="number"
+        name="experience_years"
+        id="experience_years"
+        max="50"
+        min="0"
+      /><br /><br />
+      <fieldset>
+        <legend>Skills</legend>
+        <input type="checkbox" name="html" id="html" />
+        <label for="html">HTML</label><br />
+        <input type="checkbox" name="css" id="css" />
+        <label for="css">CSS</label><br />
+        <input type="checkbox" name="javascript" id="javascript" />
+        <label for="javascript">JavaScript</label><br />
+      </fieldset>
+      <br />
+      <label for="eduaction_dropdown">Highest Education:</label>
+      <select name="eduaction_dropdown" id="eduaction_dropdown">
+        <option value="School">School</option>
+        <option value="High School">High School</option>
+        <option value="HSC">HSC</option>
+        <option value="Diploma">Diploma</option>
+        <option value="B. Tech">B. Tech</option> </select
+      ><br />
+      <br />
+      <label>Availability: </label><br />
+      <input type="radio" name="Availability" id="full_time" />
+      <label for="full_time">Full Time</label><br />
+      <input type="radio" name="Availability" id="part_time" />
+      <label for="part_time">Part Time</label><br /><br />
+      <label for="addational_comments">Additional comments:</label><br />
+      <textarea
+        id="addational_comments"
+        name="addational_comments"
+        placeholder="Write your comments here:"
+        cols="30"
+        rows="8"
+      ></textarea>
+      <br /><br />
+      <button>Submit Application</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chips Input</title>
+    <style>
+        h2,
+        ul,
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-bar {
+            padding-block: 1em;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.275);
+        }
+
+        #textInput {
+            width: 70%;
+            margin-top: 2em;
+            padding: 0.4em 1em;
+            display: block;
+            margin-inline: auto;
+        }
+
+        .chips-container {
+            width: 88%;
+            margin-top: 1.6em;
+            margin-inline: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .chips-container>.chip {
+            padding: 0.4em 0.8em;
+            margin: 0 1em 1em 0;
+            border-radius: 0.8em;
+            border: 1px solid gray;
+            display: flex;
+            width: fit-content;
+            align-items: center;
+            background-color: rgb(235, 235, 235);
+        }
+
+        .chips-container>.chip>.close-icon {
+            margin-left: 0.2em;
+            padding-bottom: 0.1em;
+            color: red;
+            font-size: 2em;
+            line-height: 0px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <h2>Chips Input</h2>
+        </nav>
+    </header>
+    <main>
+        <input type="text" id="textInput" placeholder="Type & hit Enter">
+        <div class="chips-container">
+
+        </div>
+    </main>
+    <script>
+        const textInput = document.querySelector("#textInput");
+        const chipsContainer = document.querySelector(".chips-container");
+
+        textInput.addEventListener("keydown", (event) => {
+            if (event.code === "Enter") {
+                const elementHTML = `
+                    <div class="chip">
+                        <span class="chip-text">${event.target.value}</span>
+                        <span class="close-icon">&times;</span>
+                    </div>
+                `;
+
+                chipsContainer.insertAdjacentHTML("beforeend", elementHTML);
+                event.target.value = "";
+            }
+        });
+
+        chipsContainer.addEventListener("click", (event) => {
+            const clickedCloseIcon = event.target;
+            console.log(clickedCloseIcon.classList);
+        });
+    </script>
+</body>
+
+</html>

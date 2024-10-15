@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const displayUser = (user) => {
+            console.log(user);
+        }
+
+        const getUser = (firstName, lastName) => {
+            return {
+                firstName,
+                lastName,
+
+                displayUser
+            }
+        }
+
+        const user1 = getUser("Nirbhay", "Marde");
+        const user2 = getUser("Harshal", "Marde");
+
+        user1.displayUser(user1);
+        user2.displayUser(user2);
+
+        console.log(user1.displayUser === user2.displayUser);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

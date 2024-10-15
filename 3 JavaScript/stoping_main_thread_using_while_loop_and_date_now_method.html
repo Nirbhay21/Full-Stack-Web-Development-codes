@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const startTime = Date.now();
+        let currentTime = Date.now();
+
+        console.log("Waiting");
+        
+        while (currentTime < startTime + 3000) {
+            currentTime = Date.now();
+        }
+        
+        console.log("Waiting period is over.");
+        </script>
+</body>
+
+</html>

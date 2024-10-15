@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #label {
+            width: fit-content;
+            margin-left: 1em;
+            font-size: 36px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+        }
+
+        #label::after {
+            margin: auto;
+            width: 0%;
+            height: 5px;
+            content: "";
+            display: block;
+            transition: all 400ms ease;
+            background-color: black;
+            /* background-image: linear-gradient(to right, red, blue); */
+        }
+
+        #label:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="label">Label</h1>
+</body>
+
+</html>

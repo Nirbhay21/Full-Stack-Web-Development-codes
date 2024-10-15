@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <style>
+        h1,
+        h2,
+        body {
+            margin: 0px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            padding-block: 16px;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        .heading {
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .top-label {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        #inputNumber {
+            width: 300px;
+            display: block;
+            font-size: 1.6em;
+            text-align: center;
+            margin-inline: auto;
+        }
+
+        .btn-box {
+            margin-top: 1.6em;
+            margin-inline: auto;
+            width: max-content;
+        }
+
+        .btn-box button {
+            font-family: inherit;
+            font-weight: 500;
+            padding: 0.4em 0.8em;
+        }
+
+        .btn-box #submitBtn {
+            margin-right: 1em;
+        }
+
+        .hint-msg,
+        .guesses-count {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="heading">
+        <h2>Guess The Number</h2>
+    </header>
+    <main>
+        <div class="main-container">
+            <p class="top-label">Enter a guess between 1 to 100</p>
+            <input id="inputNumber" type="text" placeholder="Enter a number">
+            <div class="btn-box">
+                <button id="submitBtn">Submit</button>
+                <button id="restartBtn">Restart Game</button>
+            </div>
+            <p class="hint-msg"></p>
+            <p class="guesses-count"></p>
+        </div>
+    </main>
+    <script>
+        const hintMsg = document.querySelector(".hint-msg");
+        const guessesCount = document.querySelector(".guesses-count");
+
+        const getRandomNumber = (lowerLimit, upperLimit) => {
+            return Math.floor(Math.random() * (upperLimit - (lowerLimit - 1)) + lowerLimit);
+        }
+
+        const MAX_ATTEMPTS = 10;
+
+        let randomNumber = getRandomNumber(1, 100);
+        let guesses = [];
+        let attemptNo = 1;
+
+        const checkGuess = () => {
+            const restartWithMsg = (message) => {
+                restartBtn.disabled = false;
+                hintMsg.innerText = message;
+                inputNumber.disabled = true;
+                submitBtn.disabled = true;
+                inputNumber.value = ``;
+            }
+
+            let inpNo = parseInt(inputNumber.value);
+            if (attemptNo <= MAX_ATTEMPTS) {
+                if (inpNo < randomNumber) {
+                    hintMsg.innerText = `Too low!`;
+                } else if (inpNo > randomNumber) {
+                    hintMsg.innerText = `Too high!`;
+                } else if (inpNo === randomNumber) {
+                    restartWithMsg(`Congratulations, You got it!`);
+                    return;
+                }
+                if (attemptNo === 10) {
+                    restartWithMsg(`You Lost! The number was ${randomNumber}`);
+                }
+                attemptNo++;
+                guesses.push(inpNo);
+                inputNumber.value = ``;
+                guessesCount.innerText = `Your guesses: ${guesses}`;
+            }
+        }
+
+        inputNumber.addEventListener("keydown", (event) => {
+            if (event.code === "Enter") {
+                checkGuess();
+            }
+        })
+
+        submitBtn.addEventListener("click", () => {
+            checkGuess();
+        });
+
+        restartBtn.addEventListener("click", () => {
+            hintMsg.innerText = ``;
+            guessesCount.innerText = ``;
+            guesses.splice(0, guesses.length);
+            randomNumber = getRandomNumber(1, 100);
+            restartBtn.disabled = true;
+            inputNumber.disabled = false;
+            submitBtn.disabled = false;
+            attemptNo = 1;
+        });
+
+        restartBtn.disabled = true;
+    </script>
+</body>
+
+</html>

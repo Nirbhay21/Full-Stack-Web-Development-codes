@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Drum Set</title>
+    <style>
+        h2,
+        body {
+            margin: 0px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-bar {
+            padding-block: 1.2em;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.275);
+        }
+
+        .all-instruments {
+            margin-top: 5em;
+            display: flex;
+            gap: 1.6em;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .all-instruments>.instrument {
+            width: 150px;
+            height: 150px;
+            border-radius: 16px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 160ms ease;
+            border: 12px solid rgb(64, 75, 105);
+        }
+
+        .all-instruments>.instrument>img {
+            width: 100%;
+            height: 100%;
+            padding: 0.7em;
+            box-sizing: border-box;
+        }
+
+        .all-instruments>.instrument>.key-alphabet {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 3.6em;
+            font-weight: 700;
+            color: red;
+            transform: translate(-50%, -50%);
+            text-shadow: 4px 3px 2px black;
+        }
+
+        .all-instruments>.instrument:hover {
+            transform: scale(1.06);
+        }
+
+        .all-instruments>.instrument:hover .key-alphabet {
+            color: rgb(25, 25, 255);
+        }
+
+        .active>.overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(255, 255, 255, 0.350);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <h2>Music Kit</h2>
+        </nav>
+    </header>
+    <main>
+        <div class="all-instruments">
+            <div class="instrument" key="KeyW">
+                <span class="key-alphabet">W</span>
+                <img src="images/instrument1.png" alt="instrument1_image">
+                <div class="overlay"></div>
+            </div>
+            <div class="instrument" key="KeyA">
+                <span class="key-alphabet">A</span>
+                <img src="images/instrument2.png" alt="instrument2_image">
+                <div class="overlay"></div>
+            </div>
+            <div class="instrument" key="KeyS">
+                <span class="key-alphabet">S</span>
+                <img src="images/instrument3.png" alt="instrument3_image">
+                <div class="overlay"></div>
+            </div>
+            <div class="instrument" key="KeyD">
+                <span class="key-alphabet">D</span>
+                <img src="images/instrument4.png" alt="instrument4_image">
+                <div class="overlay"></div>
+            </div>
+            <div class="instrument" key="KeyJ">
+                <span class="key-alphabet">J</span>
+                <img src="images/instrument5.png" alt="instrument5_image">
+                <div class="overlay"></div>
+            </div>
+            <div class="instrument" key="KeyK">
+                <span class="key-alphabet">K</span>
+                <img src="images/instrument6.png" alt="instrument6_image">
+                <div class="overlay"></div>
+            </div>
+            <div class="instrument" key="KeyL">
+                <span class="key-alphabet">L</span>
+                <img src="images/instrument7.png" alt="instrument7_image">
+                <div class="overlay"></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script>
+    const allInstruments = document.querySelector(".all-instruments");
+
+    const playInstrumentSound = (keyCode) => {
+        const clearPreviousActiveInstrument = () => {
+            const activeInstrument = allInstruments.querySelector(".instrument.active");
+            if (activeInstrument) {
+                activeInstrument.classList.remove("active");
+            }
+        }
+
+        clearPreviousActiveInstrument();
+
+        console.log(keyCode);
+
+        if (keyCode === "KeyW") {
+            new Audio("music/instrument1.mp3").play();
+            allInstruments.children[0].classList.add("active");
+        } else if (keyCode === "KeyA") {
+            new Audio("music/instrument2.mp3").play();
+            allInstruments.children[1].classList.add("active");
+        } else if (keyCode === "KeyS") {
+            new Audio("music/instrument3.mp3").play();
+            allInstruments.children[2].classList.add("active");
+        } else if (keyCode === "KeyD") {
+            new Audio("music/instrument4.mp3").play();
+            allInstruments.children[3].classList.add("active");
+        } else if (keyCode === "KeyJ") {
+            new Audio("music/instrument5.mp3").play();
+            allInstruments.children[4].classList.add("active");
+        } else if (keyCode === "KeyK") {
+            new Audio("music/instrument6.mp3").play();
+            allInstruments.children[5].classList.add("active");
+        } else if (keyCode === "KeyL") {
+            new Audio("music/instrument7.mp3").play();
+            allInstruments.children[6].classList.add("active");
+        }
+    }
+
+    window.addEventListener("keydown", (event) => {
+        playInstrumentSound(event.code);
+    });
+
+    allInstruments.addEventListener("click", (event) => {
+        const clickedInstrument = event.target.closest(".instrument");
+        if (clickedInstrument) {
+            playInstrumentSound(clickedInstrument.getAttribute("key"));
+        }
+    });
+</script>
+
+</html>

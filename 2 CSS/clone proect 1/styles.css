@@ -1,0 +1,505 @@
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    /*temp*/
+    overflow: scroll;
+    margin: 0px;
+}
+
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+#end-container {
+    height: fit-content;
+    background-color: rgb(17, 24, 39);
+}
+
+.nav-container {
+    height: 20vh;
+    box-shadow: 0px 0.5px 4px 0px black;
+    background-color: rgb(31, 41, 55);
+}
+
+.navbar-first {
+    height: 65%;
+    display: flex;
+    padding: 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgb(107, 114, 128);
+}
+
+#nav-logo {
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgb(216, 180, 254);
+}
+
+#nav-list>li>a {
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+#nav-list {
+    font-size: 1.12rem;
+    display: flex;
+}
+
+#nav-list>li>a {
+    margin: 0px 8.5px;
+}
+
+.nav-buttons {
+    display: flex;
+    margin-left: 12px;
+    align-items: center;
+}
+
+.dark-light-mode-btn {
+    padding-top: 5px;
+    margin-right: 7px;
+    background-color: #00000000;
+    border: none;
+}
+
+.nav-btn {
+    font-size: 0.96rem;
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin: 0px 4.6px;
+    border: none;
+    color: white;
+    background-color: rgb(168, 85, 247);
+}
+
+ul>li>a:hover {
+    padding-bottom: 3px;
+    border-bottom: 3px solid rgb(149, 38, 252);
+}
+
+.nav-btn:hover {
+    background-color: rgb(136, 35, 230);
+}
+
+.navbar-second {
+    height: 35%;
+    font-size: 1.12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+
+}
+
+.home-icon {
+    width: 20px;
+}
+
+.second-nav-btn {
+    border: none;
+    background-color: #00000000;
+}
+
+.second-nav-list {
+    display: flex;
+    color: rgb(216, 180, 254);
+}
+
+.second-nav-list>li>a {
+    font-weight: 600;
+    color: rgb(216, 180, 254);
+    margin: 0px 8px;
+    text-decoration: none;
+}
+
+.search-text-input {
+    height: 30px;
+    width: 200px;
+    color: white;
+    padding: 0px 12px;
+    border-radius: 6px;
+    background-color: #00000000;
+    border: 2px solid rgb(216, 180, 254);
+}
+
+.search-btn {
+    margin-left: -38px;
+    margin-top: 3px;
+}
+
+.header-info-section {
+    height: 46vh;
+    display: flex;
+}
+
+.left-info-box {
+    width: 50%;
+    padding: 1.5rem 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.right-image-box {
+    width: 50%;
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+}
+
+.first-heading-text {
+    font-size: 2.2rem;
+}
+
+.second-heading-text {
+    font-size: 1.8rem;
+}
+
+.color-purple {
+    color: rgb(147, 51, 234);
+}
+
+.paragraph {
+    font-size: 1.1rem;
+    color: rgb(156, 163, 175);
+}
+
+.section-btn {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 8px;
+    border: none;
+    padding: 0.75em;
+    border-radius: 6px;
+    color: rgb(17, 24, 39);
+    background-color: white;
+}
+
+.btn2 {
+    margin-left: 8px;
+}
+
+.section-btn:hover {
+    background-color: rgb(196, 196, 196);
+}
+
+.center-text {
+    text-align: center;
+}
+
+.section-heading {
+    font-weight: 500;
+    margin: 1.6em 0px;
+    font-size: 2rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px 8rem;
+    height: fit-content;
+}
+
+.card {
+    width: 30%;
+    overflow: hidden;
+    height: fit-content;
+    border-radius: 12px;
+    transition: all 200ms;
+    background-color: rgb(30, 41, 59);
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 1px 1px 10px 1px black;
+}
+
+.small-heading {
+    color: rgb(156, 163, 175);
+}
+
+.course-title {
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+}
+
+.course-info {
+    color: rgb(156, 163, 149);
+}
+
+.course-info-container {
+    padding: 8px 1.6rem;
+}
+
+.start-course-btn {
+    font-size: 0.86rem;
+    padding: 0.75em;
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    background-color: rgb(126, 34, 206);
+}
+
+.start-course-btn:hover {
+    background-color: rgb(163, 86, 231);
+}
+
+.testimonials-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.testimonials-card {
+    width: 50%;
+    height: fit-content;
+    padding: 2rem;
+    margin: 0px 1.2rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgb(55, 65, 81);
+}
+
+.quote-img {
+    width: 32px;
+    height: 32px;
+}
+
+.testimonials-paragraph {
+    color: rgb(209, 213, 219);
+}
+
+.person-name {
+    color: white;
+}
+
+.person-position {
+    color: rgb(156, 163, 175);
+}
+
+.footer-container {
+    margin-top: 36px;
+    padding: 16px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(31, 41, 55);
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0.62rem;
+}
+
+.horizontal-line {
+    height: 42px;
+    width: 2.4px;
+    background-color: white;
+    margin: 0.62rem;
+}
+
+.copyright-info {
+    font-size: 0.92rem;
+    color: rgb(162, 176, 198);
+    margin: 0.62rem;
+}
+
+@media (max-width: 1250px) {
+    html {
+        font-size: 15px;
+    }
+
+    #nav-list>li>a {
+        margin: 0px 5px;
+    }
+
+    .header-info-section {
+        height: 42vh;
+    }
+
+    p {
+        margin: 0.5em 0px;
+    }
+
+    .left-info-box {
+        padding: 1em 1.6rem;
+    }
+
+    .card-container {
+        margin: 0px 4rem;
+    }
+
+    .nav-container {
+        height: 18vh;
+    }
+
+    .section-heading {
+        margin: 1em 0px;
+    }
+}
+
+@media (max-width: 1150px) {
+    html {
+        font-size: 14px;
+    }
+
+    .right-image-box {
+        display: none;
+    }
+
+    .header-info-section {
+        height: fit-content;
+    }
+
+    .left-info-box {
+        width: 100%;
+        align-items: center;
+        padding: 3rem 10rem;
+        padding-bottom: 1em;
+    }
+
+    .left-info-box>p {
+        text-align: center;
+    }
+
+    #nav-list {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1100px) {
+    html {
+        font-size: 14px;
+    }
+
+    .course-info-container {
+        padding: 8px 1.2rem;
+    }
+
+    .testimonials-card {
+        padding: 1.2rem;
+    }
+
+    .left-info-box {
+        padding: 2rem 7rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 800px) {
+    html {
+        font-size: 10px;
+    }
+
+    .search-icon {
+        height: 16px;
+    }
+
+    .search-btn {
+        margin-left: -30px;
+    }
+
+    .search-text-input {
+        width: 160px;
+        height: 25px;
+    }
+
+}
+
+@media (max-width: 750px) {
+    html {
+        font-size: 12px;
+    }
+
+    .card-container {
+        margin: 0px;
+        padding: 0px 1rem;
+        height: fit-content;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .card {
+        margin: 2rem;
+        width: 80%;
+    }
+
+    .search-text-input {
+        height: 25px;
+        width: 120px;
+    }
+
+    .second-nav-list {
+        display: none;
+    }
+
+    .testimonials-container {
+        flex-direction: column;
+        align-self: stretch;
+    }
+
+    .testimonials-card {
+        width: 90%;
+        margin: 2em 0px;
+    }
+
+    .left-info-box {
+        padding: 2rem 2rem;
+    }
+
+    .first-heading-text {
+        font-size: 2rem;
+    }
+
+    .second-heading-text {
+        font-size: 1.6rem;
+    }
+
+    .color-mode-icon {
+        height: 28px;
+        margin: 0px;
+    }
+
+    .dark-light-mode-btn {
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 360px){
+    html{
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="usernameInput">Username: </label>
+    <input type="text" id="usernameInput">
+    <h1>My name is: <span class="username"></span></h1>
+    <script>
+        const username = document.querySelector(".username");
+        const usernameInput = document.querySelector("#usernameInput");
+        username.innerText = localStorage.myName;  // It is not recommended way to access localStorage.
+        username.innerText = localStorage.getItem("myName");
+
+        usernameInput.addEventListener("input", (event) => {
+            localStorage.setItem("myName", event.target.value);
+            username.innerText = localStorage.getItem("myName");
+        });
+    </script>
+</body>
+
+</html>

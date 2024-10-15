@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1" name="Button - 1" onclick="clicked(name)">Button</button>
+    <button id="btn2" name="Button - 2" onclick="clicked(name)">Button</button>
+    <button id="btn3" name="Button - 3" onclick="clicked(name)">Button</button>
+    <span id="msg"></span>
+    <script>
+        const btn1 = document.getElementById("btn1");
+        const btn2 = document.getElementById("btn2");
+        const btn3 = document.getElementById("btn3");
+        const msg = document.getElementById("msg");
+
+        btn1.innerText = "Button - 1";
+        btn2.innerText = "Button - 2";
+        btn3.innerText = "Button - 3";
+
+        function clicked(name) {
+            console.log(name);
+            msg.innerText = name + " Clicked";
+            setTimeout(() => {
+                msg.innerText = "";
+            }, 450);
+        }
+    </script>
+</body>
+
+</html>

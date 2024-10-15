@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const fruits = ["Apple", "Mango", "Orange", "Banana", "Grapes", "Papaya"];
+
+        // fruits.forEach(function (fruit){
+        //     document.write("Hello<br>");
+        // });
+
+        const returnValue = fruits.forEach((fruit, i, arr) => {
+            document.write((i + 1), ". ", fruit, "<br>");
+            // fruit = "0";  // It will not change actual array.
+            // console.log(fruit);
+            console.log("fruit: ", fruit, ", arr: ", arr, ", i: ", i);
+            arr[i] = "null";
+            // console.log(arr[i]);
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

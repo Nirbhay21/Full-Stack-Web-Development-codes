@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector(".box");
+
+        let topPosition = 0;
+        let leftPosition = 0;
+
+        const increment = 6; // Smaller increment for smoother movement
+
+        let keys = {};
+
+        window.addEventListener("keydown", (event) => {
+            keys[event.code] = true;
+        });
+
+        window.addEventListener("keyup", (event) => {
+            keys[event.code] = false;
+        });
+
+        function moveBox() {
+            let moved = false;
+
+            if (keys["KeyW"] && topPosition > 0) {
+                topPosition = Math.max(topPosition - increment, 0);
+                moved = true;
+            }
+            if (keys["KeyA"] && leftPosition > 0) {
+                leftPosition = Math.max(leftPosition - increment, 0);
+                moved = true;
+            }
+            if (keys["KeyS"] && topPosition < window.innerHeight - box.clientHeight) {
+                topPosition = Math.min(topPosition + increment, window.innerHeight - box.clientHeight);
+                moved = true;
+            }
+            if (keys["KeyD"] && leftPosition < window.innerWidth - box.clientWidth) {
+                leftPosition = Math.min(leftPosition + increment, window.innerWidth - box.clientWidth);
+                moved = true;
+            }
+
+            if (moved) {
+                box.style.top = `${topPosition}px`;
+                box.style.left = `${leftPosition}px`;
+            }
+
+            requestAnimationFrame(moveBox);
+        }
+
+        moveBox();
+    </script>
+</body>
+
+</html>

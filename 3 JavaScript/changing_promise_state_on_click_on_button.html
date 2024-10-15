@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="changePromiseState">Change Promise State</button>
+    <script>
+        const func = (resolve, rejected) => {
+            resolve("Promise Resolved.");
+        }
+
+        let res = null;
+        let p = new Promise((resolved, rejected, callback) => {
+            res = resolved;
+        });
+
+        changePromiseState.addEventListener("click", () => {
+            res();
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Row & Column Table</title>
+    <style>
+        h2,
+        body {
+            margin: 0px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-bar {
+            padding-block: 1.2em;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.275);
+        }
+
+        .input-container {
+            width: fit-content;
+            margin-top: 2em;
+            margin-inline: auto;
+            display: flex;
+            gap: 2em;
+        }
+
+        .input-container .group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-container label {
+            font-weight: 500;
+        }
+
+        .input-container .group input {
+            width: 8em;
+            margin-top: 0.6em;
+            padding: 0.6em 1em;
+        }
+
+        .table-container {
+            margin-top: 2em;
+            width: fit-content;
+            margin-inline: auto;
+        }
+
+        .table-container .table {
+            display: grid;
+            gap: 0.2em;
+        }
+
+        .table-container .table span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <h2>Column Table</h2>
+        </nav>
+    </header>
+    <div class="input-container">
+        <div class="group">
+            <label for="rowsCount">Total Rows</label>
+            <input type="number" placeholder="Rows Count" id="rowsCount" value="1" min="1">
+        </div>
+        <div class="group">
+            <label for="columnsCount">Total Columns</label>
+            <input type="number" placeholder="Column Count" id="columnsCount" value="1" min="1">
+        </div>
+    </div>
+    <div class="table-container">
+        <div class="table">
+
+        </div>
+    </div>
+
+    <script>
+        const inputRowsCount = document.querySelector("#rowsCount");
+        const inputColumnsCount = document.querySelector("#columnsCount");
+        const tableContainer = document.querySelector(".table-container");
+        const tableElement = document.querySelector(".table-container .table");
+
+        let rowsCount = 1;
+        let columnsCount = 1;
+
+        const displayTableCells = () => {
+            const table = document.createElement("div");
+            table.style.gridTemplateRows = `repeat(${rowsCount}, 50px)`;
+            table.style.gridTemplateColumns = `repeat(${columnsCount}, 50px)`;
+            table.classList.add("table");
+
+            const tableCells = [];
+
+            for (let i = 1; i <= rowsCount * columnsCount; i++) {
+                const tableCell = document.createElement("span");
+                tableCell.innerText = i;
+                tableCells.push(tableCell);
+            }
+
+            table.append(...tableCells);
+            tableContainer.innerHTML = "";
+            tableContainer.appendChild(table);
+        }
+
+        inputRowsCount.addEventListener("input", (event) => {
+            rowsCount = event.target.value;
+            if (rowsCount) {
+                console.log(tableElement);
+                displayTableCells();
+            }
+        });
+
+        inputColumnsCount.addEventListener("input", (event) => {
+            columnsCount = event.target.value;
+            if (columnsCount) {
+                console.log(tableElement);
+                displayTableCells();
+            }
+        });
+
+        displayTableCells();
+    </script>
+</body>
+
+</html>

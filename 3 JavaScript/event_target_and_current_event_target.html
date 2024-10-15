@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username">
+        <br><br>
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email">
+        <br><br>
+        <button type="reset">Submit</button>
+    </form>
+    <script>
+        const form = document.querySelector("form");
+
+        form.addEventListener("click", (e) => {
+            console.log("Target - ", e.target);
+            console.log("Current target - ", e.currentTarget);
+        });
+    </script>
+</body>
+
+</html>

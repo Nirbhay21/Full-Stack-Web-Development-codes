@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3,
+        p {
+            margin: 0px;
+        }
+
+        p>span {
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inputStudentInfo">
+        <label for="inputName">Student Name: </label>
+        <input type="text" id="inputName" name="name" /><br>
+        <label for="inputAge">Student Age: </label>
+        <input type="text" id="inputAge" name="age" /><br>
+        <label for="inputRollNo">Student roll no.: </label>
+        <input type="text" id="inputRollNo" name="roll_no"><br>
+        <label for="inputMarks">Student Marks: </label>
+        <input type="text" id="inputMarks" name="marks"><br><br>
+    </div>
+    <h3>
+        <p>Student name: <span class="studentName"></span></p>
+        <p>Student age: <span class="studentAge"></span></p>
+        <p>Student roll no: <span class="studentRollNo"></span></p>
+        <p>Student marks: <span class="studentMarks"></span></p>
+    </h3>
+
+    <script>
+        const inputStudentInfo = document.querySelector(".inputStudentInfo");
+
+        const student = JSON.parse(localStorage.getItem("student")) || {};
+
+        inputStudentInfo.addEventListener("input", (event) => {
+            if (event.target.name === "name") {
+                student.name = event.target.value;
+                document.querySelector(".studentName").innerText = student.name;
+            } else if (event.target.name === "age") {
+                student.age = event.target.value;
+                document.querySelector(".studentAge").innerText = student.age;
+            } else if (event.target.name === "roll_no") {
+                student.rollNo = event.target.value;
+                document.querySelector(".studentRollNo").innerText = student.rollNo;
+            } else if (event.target.name === "marks") {
+                student.marks = event.target.value;
+                document.querySelector(".studentMarks").innerText = student.marks;
+            }
+            localStorage.setItem("student", JSON.stringify(student));
+        });
+        document.querySelector(".studentName").innerText = student.name;
+        document.querySelector(".studentAge").innerText = student.age;
+        document.querySelector(".studentMarks").innerText = student.marks;
+        document.querySelector(".studentRollNo").innerText = student.rollNo;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const students = [
+            {
+                name: "Raj",
+                age: 19
+            },
+            {
+                name: "Aisha",
+                age: 20
+            },
+            {
+                name: "Vikram",
+                age: 18
+            },
+            {
+                name: "Priya",
+                age: 21
+            },
+            {
+                name: "Anjali",
+                age: 22
+            },
+            {
+                name: "Ravi",
+                age: 19
+            },
+            {
+                name: "Neha",
+                age: 20
+            },
+            {
+                name: "Kiran",
+                age: 21
+            },
+            {
+                name: "Arjun",
+                age: 22
+            },
+            {
+                name: "Sita",
+                age: 20
+            },
+            {
+                name: "Dev",
+                age: 18
+            },
+            {
+                name: "Lakshmi",
+                age: 21
+            }
+        ];
+
+        document.write("All students - <br>");
+        students.forEach((student, i) => {
+            document.write(i + 1, ". ", "Student name - ", student.name, "<br>");
+            document.write("Student age - ", student.age, "<br>");
+        });
+
+        const studentWithAge20 = students.filter((student) => {
+            return student.age == 20;
+        });
+
+        document.write("<br>Student whose age is 20 - <br>");
+        studentWithAge20.forEach((student, i) => {
+            document.write(i + 1, ". ", "Student name - ", student.name, "<br>");
+            document.write("Student age - ", student.age, "<br>");
+        });
+
+        studentsNameWithAge20 = studentWithAge20.map((student) => {
+            return student.name.toUpperCase();
+        });
+
+        document.write("<br>Names - ", studentsNameWithAge20.join(", "));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

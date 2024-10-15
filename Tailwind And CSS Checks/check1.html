@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-bar {
+            padding-inline: 1em;
+            padding-block: 0.4em;
+            display: flex;
+            justify-content: space-between;
+            background-image: linear-gradient(to right, purple, transparent);
+        }
+
+        .nav-bar__list {
+            display: flex;
+            list-style: none;
+            gap: 1em;
+            align-items: center;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        .nav-bar__logo,
+        .nav-bar__btn-box {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0%;
+        }
+
+        .nav-bar__btn-box {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .nav-bar__btn {
+            padding-inline: 2em;
+            padding-block: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <h1 class="nav-bar__logo">LOGO</h1>
+        <ul class="nav-bar__list">
+            <li>Pricing</li>
+            <li>Docs</li>
+            <li>Changelog</li>
+            <li>Blog</li>
+            <li>Login</li>
+        </ul>
+        <div class="nav-bar__btn-box">
+            <button class="nav-bar__btn">BUTTON</button>
+        </div>
+    </nav>
+</body>
+
+</html>

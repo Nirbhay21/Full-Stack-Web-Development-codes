@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .end-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            padding: 2rem;
+            box-sizing: border-box;
+            border-radius: 16px;
+            position: relative;
+            background-color: rgba(48, 208, 208, 0.300);
+        }
+
+        .box1 {
+            width: 125px;
+            height: 125px;
+            position: absolute;
+            animation: box1-animation 2s infinite 300ms ease-in;
+            background-color: white;
+        }
+        
+        .box2 {
+            width: 110px;
+            height: 110px;
+            position: absolute;
+            animation: box2-animation 2s infinite 300ms ease-in;
+            background-color: white;
+        }
+
+        @keyframes box1-animation {
+            0%{
+                top: calc(100% - 125px - 2rem);
+                left: calc(100% - 125px - 2rem);
+            }
+            25%{
+                top: calc(100% - 125px - 2rem);
+                left: 2rem;
+            }
+            50%{
+                top: 2rem;
+                left: 2rem;
+            }
+            75%{
+                top: 2rem;
+                left: calc(100% - 125px - 2rem);
+            }
+            100%{
+                top: calc(100% - 125px - 2rem);
+                left: calc(100% - 125px - 2rem);
+            }
+        }
+
+        @keyframes box2-animation{
+            0%{
+                top: 2rem;
+                left: 2rem;
+            }
+            25%{
+                top: 2rem;
+                left: calc(100% - 110px - 2rem);
+            }
+            50%{
+                top: calc(100% - 110px - 2rem);
+                left: calc(100% - 110px - 2rem);
+            }
+            75%{
+                top: calc(100% - 110px - 2rem);
+                left: 2rem;
+            }
+            100%{
+                top: 2rem;
+                left: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="end-container">
+        <div class="container">
+            <div class="box1"></div>
+            <div class="box2"></div>
+        </div>
+    </div>
+</body>
+
+</html>

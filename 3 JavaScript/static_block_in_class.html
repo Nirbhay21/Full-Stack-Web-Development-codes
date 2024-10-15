@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class User {
+            #username
+            #password
+
+            constructor(username, password) {
+                this.#username = username;
+                this.#password = password;
+            }
+
+            static {
+                this.staticProperty = "STATIC PROPERTY";
+                this.display = (user) => {
+                    console.log("Username:", user.#username);
+                    console.log("Password:", user.#password);
+                }
+            }
+        }
+
+        const user = new User("Nirbhay", "Nirbhay@123");
+        User.display(user);
+
+        console.log(User.staticProperty);
+
+
+
+        class MyClass {
+            static staticVar1;
+            static staticVar2;
+
+            // Static block for complex initialization
+            static {
+                this.staticVar1 = 10;
+                this.staticVar2 = this.staticVar1 * 2;
+                console.log('Static block executed');
+            }
+        }
+
+        console.log(MyClass.staticVar1); // Outputs: 10
+        console.log(MyClass.staticVar2); // Outputs: 20
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

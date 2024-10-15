@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <input type="text">
+        <button type="button">Focus</button>
+        <button type="button">Blur</button>
+        <button type="button">Submit</button>
+    </form>
+    <script>
+        const inputText = document.querySelector("input[type='text']");
+        const form = document.querySelector("#form");
+        // setTimeout(() => {
+        //     inputText.focus();
+        // }, 3000);
+        // setTimeout(() => {
+        //     inputText.blur();
+        // }, 4000);
+
+        document.querySelectorAll("button")[0].addEventListener("click", () => {
+            inputText.focus();
+            setTimeout(() => {
+                inputText.blur();
+            }, 2000);
+        });
+        document.querySelectorAll("button")[1].addEventListener("click", () => {
+            inputText.blur();
+        });
+        document.querySelectorAll("button")[2].addEventListener("click", () => {
+            form.submit();
+        });
+
+        // setTimeout(()=>{
+        //     form.submit();
+        // }, 5000);
+    </script>
+</body>
+
+</html>

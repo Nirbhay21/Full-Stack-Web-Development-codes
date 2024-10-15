@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getBirthYear() {
+            return new Date().getFullYear() - this.age;
+        }
+
+        const getUser = (firstName, lastName, age) => {
+            return {
+                firstName,
+                lastName,
+                age,
+
+                getBirthYear 
+            }
+        }
+
+        const user1 = getUser("Nirbhay", "Marde", 20);
+        const user2 = getUser("Harshal", "Marde", 17);
+
+        console.log("Birth year of user1:", user1.getBirthYear());
+        console.log("Birth year of user2:", user2.getBirthYear());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+

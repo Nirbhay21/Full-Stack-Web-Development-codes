@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const array1 = [1, 2, 3, 4, 5];
+        const array2 = array1;
+        document.write("array2 - ", array1, "<br>");
+        array1[0] = null;
+        array1[array1.length - 1] = null;
+        document.write("array1 - ", array1, "<br>")
+        document.write("array2 - ", array2, "<br>")
+
+        const student = {
+            firstName: "Nirbhay",
+            lastName: "Marde",
+            age: 19
+        }
+
+        const tempStudent = student;
+
+        tempStudent.age = 100;
+
+        let username1 = "Nirbhay";
+        let username2 = username1;
+
+
+        const num1 = 123;
+        const num2 = 123;
+        const num3 = 123;
+        const num4 = 123;
+        const num5 = 123;
+        
+        let temp1 = 12.9123;
+        let temp2 = 12.9123;
+        let temp3 = 12.9123;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="#username">Username: </label>
+    <input type="text" name="username" id="username">
+
+    <p id="paragraph">Username set to: </p>
+    <script>
+        const username = document.querySelector("input[type='text']");
+        const paragraph = document.querySelector("#paragraph");
+
+        // username.addEventListener("input", (event) => {
+        //     console.log("event - ", event);
+        //     console.log("event.data - ", event.data);
+        // });
+
+        username.addEventListener("input", (event) => {
+            paragraph.innerHTML = `Username set to: ${event.target.value}`;
+        });
+    </script>
+</body>
+
+</html>

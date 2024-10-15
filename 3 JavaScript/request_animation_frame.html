@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            background-color: black;
+        }
+
+        .container>.box {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script>
+        const box = document.querySelector(".container>.box");
+
+        let direction = "";
+
+        window.addEventListener("keydown", (event) => {
+            switch (event.code) {
+                case "KeyW":
+                case "ArrowUp":
+                    direction = "up";
+                    break;
+
+                case "KeyS":
+                case "ArrowDown":
+                    direction = "down";
+                    break;
+
+                case "KeyA":
+                case "ArrowLeft":
+                    direction = "left";
+                    break;
+
+                case "KeyD":
+                case "ArrowRight":
+                    direction = "right";
+                    break;
+            }
+        });
+
+        let posX = 0;
+        let posY = 0;
+
+        let i = 0; 
+
+        const moveBox = () => {
+            const moveBy = 50;
+            const maxBoundary = 450;
+
+            switch (direction) {
+                case "right":
+                    if (posX < maxBoundary) {
+                        posX += moveBy;
+                    }
+                    break;
+
+                case "left":
+                    if (posX > 0) {
+                        posX -= moveBy;
+                    }
+                    break;
+
+                case "up":
+                    if (posY > 0) {
+                        posY -= moveBy;
+                    }
+                    break;
+
+                case "down":
+                    if (posY < maxBoundary) {
+                        posY += moveBy;
+                    }
+                    break;
+            }
+            box.style.left = `${posX}px`;
+            box.style.top = `${posY}px`;
+
+            requestAnimationFrame(moveBox);
+        }
+
+        requestAnimationFrame(moveBox);
+    </script>
+</body>
+
+</html>

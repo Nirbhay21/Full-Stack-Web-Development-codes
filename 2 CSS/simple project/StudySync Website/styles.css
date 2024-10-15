@@ -1,0 +1,835 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700&display=swap');
+
+
+:root {
+    --primary-color: #4a4dff;
+    --primary-color-dark: #2529ff;
+    --accent-color: #3f83f8;
+    --text-color: #333333;
+    --link-color: #2563eb;
+    --background-color: #ffffff;
+    --light-gray: #dadada;
+    --gray: #808080;
+    --dark-gray: #555555;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+p,
+h2,
+h3,
+h4,
+h5,
+h6, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-bar {
+    font-size: 1.2em;
+    padding: 1.8em 0px;
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.website-logo {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.68em;
+    display: flex;
+    gap: 0.36em;
+    align-items: center;
+}
+
+.logo-img {
+    width: 1.36em;
+    height: 1.36em;
+}
+
+.nav-links-container {
+    display: none;
+}
+
+.nav-links {
+    font-weight: 500;
+    color: var(--dark-gray);
+    transition: color 250ms;
+}
+
+.nav-links:hover {
+    color: var(--link-color);
+}
+
+.contact-button {
+    display: none;
+    padding: 0.5em 1em;
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    border-radius: 0.375em;
+    font-weight: 600;
+    transform: background-color 120ms;
+}
+
+.contact-button:hover {
+    background-color: var(--accent-color);
+}
+
+.menu-logo {
+    width: 2em;
+    height: 2em;
+}
+
+.menu-btn {
+    display: block;
+    padding: 0px;
+    border: none;
+    background-color: #FFFFFF00;
+}
+
+.main-section {
+    width: 80%;
+    margin: 0px auto;
+    margin-top: 1em;
+    padding: 0px 2em;
+    display: flex;
+    gap: 3em;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.left-container {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    align-items: center;
+    animation: slideFromLeftToRight 1s cubic-bezier(0.18, 0.24, 0.36, 1.14) 0s forwards;
+}
+
+.section-label {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1em;
+    margin-bottom: 0.42em;
+}
+
+.section-title {
+    color: var(--text-color);
+    line-height: 1.12em;
+    font-size: 2.6em;
+}
+
+.section-description {
+    color: var(--gray);
+    font-size: 1.12em;
+}
+
+.right-container {
+    width: 100%;
+    height: 100%;
+
+}
+
+.section-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2em;
+}
+
+.start-btn,
+.tour-btn {
+    font-size: 1em;
+    border-radius: 0.32em;
+    color: var(--background-color);
+    padding: 0.65em 1.4em;
+    border: none;
+}
+
+.start-btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.tour-btn:hover {
+    background-color: var(--text-color);
+}
+
+.start-btn {
+    margin-right: 0.46em;
+    ;
+    background-color: var(--primary-color);
+}
+
+.tour-btn {
+    background-color: var(--dark-gray);
+}
+
+.trusted-section {
+    gap: 2em;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    animation: slideFromLeftToRight 1s cubic-bezier(0.18, 0.24, 0.36, 1.14) 0s forwards;
+}
+
+.section-heading {
+    margin-top: 2em;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+.trusted-companeys {
+    padding: 2em 2.8em;
+    gap: 2em;
+    display: grid;
+    border-radius: 1em;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--light-gray);
+}
+
+.company {
+    display: flex;
+    gap: 0.42em;
+    align-items: center;
+}
+
+.company-logo {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.company-name {
+    font-size: 1.2em;
+}
+
+.section-info {
+    padding: 0px 2em;
+    margin: 1em 0px;
+    text-align: center;
+    color: var(--dark-gray)
+}
+
+.card-section {
+    padding: 0px 2em;
+    margin: 0px auto;
+}
+
+.card-container {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2em 3em;
+    padding-bottom: 0px;
+}
+
+.card {
+    padding: 1.2em 0.86em;
+    display: flex;
+    gap: 0.72em;
+    color: var(--background-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    border-radius: 0.36em;
+}
+
+.card-icon {
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.card-name {
+    font-size: 1em;
+}
+
+.card-info {
+    font-size: 0.86em;
+}
+
+.background-blue-card {
+    background-color: rgb(57, 121, 218);
+}
+
+.background-red-card {
+    background-color: rgb(253, 76, 114);
+}
+
+.background-yellow-card {
+    background-color: rgb(250, 173, 68);
+}
+
+.background-gren-card {
+    background-color: rgb(51, 174, 177);
+}
+
+.background-green-card {
+    background-color: rgb(77, 125, 58);
+}
+
+.background-purple-card {
+    background-color: rgb(82, 78, 126);
+}
+
+.testmonial-section {
+    text-align: center;
+}
+
+.testmonial-card-container {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.6em;
+    padding: 1.2em 0px;
+}
+
+.testmonial-card {
+    width: 18em;
+    padding: 1.6em;
+    border-radius: 0.82em;
+    box-shadow: 0px 0px 0.32em 0.08px gray;
+    display: flex;
+    gap: 0.56em;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1.6px solid white;
+    transition: transform 200ms;
+}
+
+.testmonial-card:hover {
+    transform: scale(1.04);
+    border: 1.6px solid var(--primary-color);
+    box-shadow: 0px 0px 0.46em 0.08px gray;
+}
+
+.testmonial-card-info {
+    font-size: 1em;
+}
+
+.testmonial-person-image {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}
+
+.label-name {
+    color: var(--primary-color);
+    font-size: 1.12em;
+    font-weight: 600;
+}
+
+.label-profession {
+    color: var(--gray);
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.newsletter-container {
+    width: 80%;
+    margin: 4em auto;
+    border-radius: 0.82em;
+    overflow: hidden;
+    display: flex;
+}
+
+.newsletter-left-container {
+    width: 50%;
+    display: none;
+}
+
+.newsletter-img {
+    width: 100%;
+    height: 100%;
+}
+
+.newsletter-right-container {
+    width: 100%;
+    padding: 2em 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0ff;
+}
+
+.newsletter-right-content {
+    display: flex;
+    gap: 0.75em;
+    flex-direction: column;
+    width: 80%;
+}
+
+.newsletter-primary-heading {
+    color: var(--primary-color);
+    font-size: 2em;
+}
+
+.newsletter-secondary-heading {
+    color: var(--gray);
+    font-size: 1em;
+}
+
+.newsletter-form{
+    display: flex;
+    gap: 0.62em;
+    align-items: center;
+}
+
+.email-input-box {
+    font-size: 1em;
+    padding: 0.62em 0.76em;
+    border-radius: 0.32em;
+    border: 1px solid var(--gray);
+}
+
+.send-btn {
+    padding: 0.62em 1.2em;
+    font-size: 1em;
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 0.32em;
+}
+
+.newsletter-para {
+    font-size: 0.72em;
+}
+
+.footer-section{
+    margin-top: 5em;
+    background-color: rgb(232, 232, 232);
+}
+
+.footer-content{
+    width: 100%;
+    padding: 2em;
+    box-sizing: border-box;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+}
+
+.footer-head{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.96em;
+}
+
+.footer-website-logo{
+    width: 2em;
+    height: 2em;
+}
+
+.website-logo-flex{
+    display: flex;
+    gap: 0.52em;
+    padding: 1em;
+    background-color: rgb(200, 200, 200);
+    border-radius: 0.50em;
+}
+
+.footer-website-name{
+    font-size: 1.5em;
+    font-weight: 700;
+    color: black;
+}
+
+.footer-para{
+    font-size: 1em;
+}
+
+.footer-social-links{
+    display: flex;
+    gap: 0.72em;
+}
+
+.social-logo{
+    width: 2em;
+    height: 2em;
+}
+
+.footer-links{
+    height: 100%;
+    display: grid;
+    margin-left: 4em;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.links-list-name{
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+.links-column{
+    width: 75%;
+    display: flex;
+    gap: 1.2em;
+    list-style: none;
+    flex-direction: column;
+}
+
+.footer-link{
+    font-size: 0.92em;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.footer-link:hover{
+    color: var(--accent-color);
+}
+
+.footer-copyright-info{
+    font-size: 0.92em;
+    text-align: center;
+    padding: 2.6em 0px;
+    background-color: rgb(200, 214, 238);
+}
+
+@keyframes slideFromLeftToRight {
+    from {
+        opacity: 0;
+        transform: translate(-120%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .trusted-companeys {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .main-section {
+        margin: 1em auto;
+        flex-direction: row;
+    }
+
+    .left-container {
+        text-align: start;
+        align-items: start;
+        padding: 0px;
+        width: 50%;
+        height: 100%;
+    }
+
+    .right-container {
+        width: 50%;
+        height: 100%;
+        display: block;
+    }
+
+    .footer-content{
+        flex-direction: row;
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 300px) {
+    .header {
+        font-size: 0.92rem;
+    }
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 0.60rem;
+    }
+
+    .main-section {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 400px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 0.70rem;
+    }
+
+    .main-section {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 0.80rem;
+    }
+
+    .main-section {
+        gap: 5em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 0.90rem;
+    }
+
+    .menu-logo {
+        width: 3em;
+        height: 3em;
+    }
+    .email-input-box {
+        padding: 0.62em 1.2em;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 0.76rem;
+    }
+
+    .nav-links-container {
+        display: flex;
+        gap: 0.86em;
+    }
+
+    .contact-button {
+        display: block;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .trusted-companeys {
+        padding: 1.6em 3em;
+    }
+
+    .card-section {
+        width: 50%;
+    }
+
+    .newsletter-left-container {
+        width: 50%;
+        display: block;
+    }
+
+    .newsletter-right-container {
+        width: 50%;
+    }
+    .footer-head{
+        width: 35%;
+    }
+    .footer-links{
+        width: 65%;
+    }
+    .footer-head{
+        align-items: start;
+    }
+    .website-logo-flex{
+        padding: 0px;
+        background-color: #ffffff00;
+    }
+    .footer-links{
+        justify-items: start;
+    }
+    .links-column{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 0.86rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 0.92rem;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (min-width: 1650px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 2300px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (min-width: 2650px) {
+
+    .header,
+    .main-section,
+    .trusted-section,
+    .card-section,
+    .testmonial-section, 
+    .newsletter-section,
+    .footer-section {
+        font-size: 1.75rem;
+    }
+}

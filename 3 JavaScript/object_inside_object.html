@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const student = {
+            firstName: "Nirbhay",
+            fatherName: "Santosh",
+            surName: "Marde",
+            age: 19,
+            address: {
+                city: "Sangamner",
+                state: "Maharashtra",
+                pinCode: 422605
+            }
+        }
+
+        const world1 = {
+            countries: {
+                pakistan: "Pakistan",
+                india: {
+                    maharashtra: {
+                        
+                    }
+                },
+                japan: {},
+                southKorea: {},
+                northKorea: {},
+                pakistan: {},
+                nepal: {}
+            }
+        }
+
+        const world2 = {};
+        
+        world2.countries = {};
+        world2.countries.india = {};
+        world2.countries.india.maharashtra = {};
+        world2.countries.india.maharashtra.sangamner = {};
+        world2.countries.india.maharashtra.sangamner.nirbhay = "Nirbhay";
+        document.write(student.address.pinCode);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

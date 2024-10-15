@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        div.end-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-board {
+            width: 80vmin;
+            height: 80vmin;
+            display: grid;
+            gap: 1rem;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            background-color: black;
+        }
+
+        .game-board>.box {
+            font-size: 7rem;
+            font-family: 'Segoe UI', Tahoma;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="end-container">
+        <div class="game-board">
+            <div class="box" name="box1"></div>
+            <div class="box" name="box2"></div>
+            <div class="box" name="box3"></div>
+            <div class="box" name="box4"></div>
+            <div class="box" name="box5"></div>
+            <div class="box" name="box6"></div>
+            <div class="box" name="box7"></div>
+            <div class="box" name="box8"></div>
+            <div class="box" name="box9"></div>
+        </div>
+    </div>
+
+    <script>
+        const gameBoard = document.querySelector(".game-board");
+
+        const USER = "user";
+        const BOT = "bot";
+        const MARKER_X = "X";
+        const MARKER_O = "O";
+
+        let activePlayer = USER;
+        let activePlayerMarker = MARKER_X;
+
+        const placeMarker = (activePlayer, box) => {
+            if (activePlayer === USER) {
+                activePlayerMarker = MARKER_X;
+            } else if (activePlayer === BOT) {
+                activePlayerMarker = MARKER_O;
+            }
+
+            if (box.innerText === "") {
+                box.innerText = activePlayerMarker;
+            }
+        }
+
+        gameBoard.addEventListener("click", (event) => {
+            const clickedBox = event.target.closest(".box");
+            if (clickedBox) {
+                placeMarker(activePlayer, clickedBox);
+            }
+        });
+    </script>
+</body>
+
+</html>

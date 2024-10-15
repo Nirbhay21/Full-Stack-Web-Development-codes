@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+
+        .container>.box {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            background-color: rgb(0, 255, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script>
+        const box = document.querySelector(".container>.box");
+
+        const setSpeed = 100;
+
+        const speed = 200 - setSpeed * 1.5;
+
+        // 200 - 1
+        // 50 - 100
+
+        const position = {
+            x: 0,
+            y: 0,
+            moveTowards: "",
+            isOutOfBoundary: false
+        };
+
+        window.addEventListener("keydown", (event) => {
+            switch (event.code) {
+                case "KeyW":
+                case "ArrowUp":
+                    position.moveTowards = "up";
+                    break;
+
+                case "KeyS":
+                case "ArrowDown":
+                    position.moveTowards = "down";
+                    break;
+
+                case "KeyA":
+                case "ArrowLeft":
+                    position.moveTowards = "left";
+                    break;
+
+                case "KeyD":
+                case "ArrowRight":
+                    position.moveTowards = "right";
+                    break;
+            }
+        });
+
+        const moveBox = () => {
+
+            if (position.moveTowards === "right") {
+                if (position.x < 500 - 20) {
+                    position.x += 20;
+                    box.style.left = `${position.x}px`;
+                } else {
+                    position.isOutOfBoundary = true;
+                }
+            } else if (position.moveTowards === "left") {
+                if (position.x > 0) {
+                    position.x -= 20;
+                    box.style.left = `${position.x}px`;
+                } else {
+                    position.isOutOfBoundary = true;
+                }
+            } else if (position.moveTowards === "down") {
+                if (position.y < 500 - 20) {
+                    position.y += 20;
+                    box.style.top = `${position.y}px`;
+                } else {
+                    position.isOutOfBoundary = true;
+                }
+            } else if (position.moveTowards === "up") {
+                if (position.y > 0) {
+                    position.y -= 20;
+                    box.style.top = `${position.y}px`;
+                } else {
+                    position.isOutOfBoundary = true;
+                }
+            }
+            if (position.isOutOfBoundary) {
+                alert("Game Over");
+                position.x = 0;
+                position.y = 0;
+                box.style.left = `${position.x}px`;
+                box.style.top = `${position.y}px`;
+                position.isOutOfBoundary = false;
+                position.moveTowards = "";
+            }
+        }
+
+        box.style.transition = `all ${speed}ms ease-in-out`;
+        setInterval(moveBox, speed);
+
+    </script>
+</body>
+
+</html>

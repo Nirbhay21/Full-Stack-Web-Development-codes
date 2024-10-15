@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Transformers</title>
+    <style>
+        h1,
+        h2,
+        h3,
+        p,
+        body {
+            margin: 0px;
+            font-size: 1.4rem;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma;
+            background-color: rgb(240, 240, 240);
+        }
+
+        .header {
+            text-align: center;
+            padding: 1rem 0px;
+            box-shadow: 0px 1px 8px 0px #ababab;
+            background-color: white;
+        }
+
+        .app-container {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0px auto;
+        }
+
+        #inputString {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.4rem 0.8rem;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .display-box {
+            padding: 2.6%;
+            margin: 0px auto;
+        }
+
+        .string-box {
+            margin-bottom: 1rem;
+        }
+
+        .string-box label {
+            color: white;
+            font-size: 0.86rem;
+            padding: 0.2rem 0.4rem;
+            background-color: black;
+        }
+
+        .string-box p {
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>String Transformers</h1>
+    </header>
+    <main class="app-container"></main>
+    <div class="container">
+        <input type="text" id="inputString" placeholder="Enter the sentence with spaced (alphanumeric)"
+            value="this is a normal sentence to transform">
+        <div class="display-box">
+            <div class="string-box">
+                <label for="lowerCaseStr">Lower Case</label>
+                <p id="lowerCaseStr"></p>
+            </div>
+            <div class="string-box">
+                <label for="upperCaseStr">Upper Case</label>
+                <p id="upperCaseStr"></p>
+            </div>
+            <div class="string-box">
+                <label for="camelCaseStr">Camel Case</label>
+                <p id="camelCaseStr"></p>
+            </div>
+            <div class="string-box">
+                <label for="pascalCaseStr">Pascal Case</label>
+                <p id="pascalCaseStr"></p>
+            </div>
+            <div class="string-box">
+                <label for="snakeCaseStr">Snake Case</label>
+                <p id="snakeCaseStr"></p>
+            </div>
+            <div class="string-box">
+                <label for="kebabCaseStr">Kebab Case</label>
+                <p id="kebabCaseStr"></p>
+            </div>
+            <div class="string-box">
+                <label for="trimStr">Trim</label>
+                <p id="trimStr"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const inputString = document.querySelector("#inputString");
+
+        const lowerCaseStr = document.querySelector('#lowerCaseStr');
+        const upperCaseStr = document.querySelector('#upperCaseStr');
+        const camelCaseStr = document.querySelector('#camelCaseStr');
+        const pascalCaseStr = document.querySelector('#pascalCaseStr');
+        const snakeCaseStr = document.querySelector('#snakeCaseStr');
+        const kebabCaseStr = document.querySelector('#kebabCaseStr');
+        const trimStr = document.querySelector('#trimStr');
+
+        printResults();
+
+        inputString.addEventListener("input", () => {
+            printResults();
+        });
+
+        function printResults() {
+            const string = inputString.value;
+
+            lowerCaseStr.innerText = string.toLowerCase();
+            upperCaseStr.innerText = string.toUpperCase();
+            camelCaseStr.innerText = string.split(" ").map((word) => word.charAt(0).toUpperCase().concat(word.slice(1))).join("").split("").map((char, i) => (i === 0) ? char.toLowerCase() : char).join("");
+            pascalCaseStr.innerText = string.split(" ").map((word) => word.charAt(0).toUpperCase().concat(word.slice(1))).join("");
+            snakeCaseStr.innerText = string.replaceAll(" ", "_");
+            kebabCaseStr.innerText = string.replaceAll(" ", "-");
+            trimStr.innerText = string.replaceAll(" ", "");
+        }
+    </script>
+</body>
+
+</html>

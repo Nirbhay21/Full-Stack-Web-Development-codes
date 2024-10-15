@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            border: 5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="img" width="500" height="500">
+    <script>
+        let imgLink;
+        setInterval(() => {
+            fetch("https://dog.ceo/api/breeds/image/random")
+                .then(request => request.json())
+                .then(json => {
+                    imgLink = json.message
+                    img.src = imgLink;
+                });
+        }, 2000);
+    </script>
+</body>
+
+</html>

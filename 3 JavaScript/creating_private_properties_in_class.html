@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class User {
+            #firstName
+            #lastName
+            #age
+
+            constructor(firstName, lastName, age) {
+                this.#firstName = firstName;
+                this.#lastName = lastName;
+                this.#age = age;
+            }
+
+            staticProperty = "This is static property";
+
+            #displayFullName() {
+                console.log("Full Name:", this.#firstName, this.#lastName);
+            }
+
+            displayInfo() {
+                this.#displayFullName();
+                console.log("First name:", this.#firstName);
+                console.log("Last name:", this.#lastName);
+                console.log("Age:", this.#age);
+            }
+        }
+
+        const user = new User("Nirbhay", "Marde", 20);
+
+        // user.#firstName = "Harshal";   <-- It is not accessable here because it is private field.
+        // user.#displayFullName();   <-- Not accessable because it is private property (method).
+
+        user.displayInfo();
+
+        console.log("Static Property -", user.staticProperty);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

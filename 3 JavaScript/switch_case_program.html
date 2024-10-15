@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const percentage = +prompt("Enter you percentage");
+        switch (true) {
+            case (percentage >= 91 && percentage <= 100):
+                document.write("A Grade.")
+                break;
+            case (percentage >= 81 && percentage <= 90):
+                document.write("B Grade.")
+                break;
+            case (percentage >= 71 && percentage <= 80):
+                document.write("C Grade.")
+                break;
+            case (percentage >= 61 && percentage <= 70):
+                document.write("D Grade.")
+                break;
+            case (percentage >= 51 && percentage <= 60):
+                document.write("E Grade.")
+                break;
+
+            default:
+                document.write("No Grade Fail.")
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

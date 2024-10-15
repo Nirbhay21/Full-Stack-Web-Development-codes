@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function a(value) {
+        //     console.log(`Datatype - ${typeof value} & Value - ${JSON.stringify(value)}`);
+        // }
+
+        // a(10);
+        // a("hello")
+        // a(undefined);
+        // a([1, 2, 3, 4, 5]);
+        // a({
+        //     firstName: "Nirbhay",
+        //     lastName: "Marde"
+        // });
+
+        function callFunction(func){
+            func();
+            console.dir(func);
+        }
+
+        function printHello(){
+            console.log("Hello");
+        }
+
+        callFunction(printHello);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

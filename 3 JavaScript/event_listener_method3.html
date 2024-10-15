@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        h1 {
+            padding: 1rem;
+            width: fit-content;
+            color: white;
+            border-radius: 1rem;
+            background-color: black;
+        }
+                              
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <h1 id="heading">Heading</h1>
+    <script>
+        const box = document.querySelector(".box");
+
+        const printClicked = () => {
+            console.log("Clicked.");
+        }
+
+        const printHello = function () {
+            console.log("Hello");
+        }
+
+        const heading = document.querySelector("#heading");
+
+        heading.addEventListener("click", printHello);
+        heading.addEventListener("click", () => {
+            console.log("Heading Clicked...");
+        });
+        box.addEventListener();
+    </script>
+</body>
+
+</html>

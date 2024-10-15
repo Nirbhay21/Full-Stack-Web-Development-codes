@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const user = {
+            firstName: "Nirbhay",
+            lastName: "Marde",
+            age: 19,
+            address: {
+                city: "Sangamner",
+                state: "Maharashtra",
+                pinCode: 422605
+            }
+        };
+
+        // const userCopy = JSON.parse(JSON.stringify(user));
+        const userCopy = structuredClone(user);
+        document.write(typeof JSON.stringify(user));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

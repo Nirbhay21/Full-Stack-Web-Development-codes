@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .end-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-bar {
+            width: 80%;
+            position: relative;
+            height: 2.4rem;
+            border-radius: 1rem;
+            background-color: #AFAFAF;
+            overflow-x: hidden;
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid black;
+        }
+
+        .progress-line {
+            width: 0%;
+            height: 100%;
+            background-color: #00FF00;
+        }
+
+        .progress-percent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .buttons {
+            margin-top: 5rem;
+            display: flex;
+            gap: 10rem;
+        }
+
+        .progress-btn {
+            width: 4rem;
+            height: 4rem;
+            font-size: 2.6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="end-container">
+        <div class="progress-bar">
+            <div class="progress-line"></div>
+            <span class="progress-percent">0%</span>
+        </div>
+        <div class="buttons">
+            <input id="decProgressBtn" class="progress-btn" type="button" value="-">
+            <input id="incProgressBtn" class="progress-btn" type="button" value="+">
+        </div>
+    </div>
+    <script>
+        let progress = 0;
+
+        const decProgressBtn = document.querySelector("#decProgressBtn");
+        const incProgressBtn = document.querySelector("#incProgressBtn");
+        const progressLine = document.querySelector(".progress-line");
+        const progressPercent = document.querySelector(".progress-percent");
+
+        const decrementProgress = () => {
+            if (progress > 0) {
+                progress--;
+            }
+            progressLine.style.width = `${progress}%`;
+            progressPercent.innerText = `${progress}%`;
+        }
+        const incrementProgress = () => {
+            if (progress < 100) {
+                progress++;
+            }
+            progressLine.style.width = `${progress}%`;
+            progressPercent.innerText = `${progress}%`;
+        }
+
+        decProgressBtn.addEventListener("click", decrementProgress);
+        incProgressBtn.addEventListener("click", incrementProgress);
+    </script>
+</body>
+
+</html>

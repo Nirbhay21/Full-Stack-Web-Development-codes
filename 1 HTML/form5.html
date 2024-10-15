@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Complex Form</h2>
+    <form>
+      <fieldset>
+        <legend>Persional Information</legend>
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" />
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" />
+        <label for="phone">Phone no: </label>
+        <input type="tel" name="phone" id="phone" />
+        <br /><br />
+        <label for="birth_date">Date of Birth: </label>
+        <input type="date" id="birth_date" name="birth_date" />
+        <br /><br />
+        <label>Gender: </label><br />
+        <label for="male">Male: </label>
+        <input type="radio" id="male" name="gender" />
+        <label for="female">Female: </label>
+        <input type="radio" id="female" name="gender" />
+        <label for="other">Other: </label>
+        <input type="radio" id="other" name="gender" />
+        <br /><br />
+        <label for="select_country">Select Country: </label>
+        <select id="select_country" name="select_country" required>
+          <option disabled selected hidden>Select Country</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Shri Lanka">Shri Lanka</option>
+          <option value="Manmar">Manmar</option>
+          <option value="Pakistan">Pakistan</option>
+          <option value="Napal">Napal</option>
+          <option value="Bhutan">Bhutan</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <label for="street">Address Street:</label>
+          <input type="text" name="street" id="street" />
+          <label for="city">City: </label>
+          <input type="text" name="city" id="city" />
+          <label for="state">State: </label>
+          <input type="text" name="state" id="state" />
+          <label for="Zip_code">Zip Code: </label>
+          <input type="text" name="Zip_code" id="Zip_code" />
+        </legend>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <label>Other Information</label>
+        </legend>
+        <label for="comments">Comments</label><br />
+        <textarea name="comments" id="comments" cols="30" rows="8"></textarea
+        ><br />
+        <label for="agree">I agree to the terms and conditions </label>
+        <input type="checkbox" name="agree" id="agree" />
+      </fieldset>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            overflow: scroll;
+            background-color: rgba(34, 255, 0, 0.293);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae assumenda ex obcaecati nam minima eos,
+        doloremque alias nulla illum harum velit autem? Ipsum veniam, vitae, quam illum sit eum placeat expedita numquam
+        praesentium possimus mollitia! Maxime iure molestiae a esse vel enim sit doloremque suscipit labore rem.
+        Voluptatibus earum, labore iure ipsam pariatur voluptas sit, eligendi quia laudantium consequuntur aut soluta,
+        quam beatae quis dolorum! Eum temporibus voluptas quo omnis? Iusto quos consequuntur error aut, rerum fuga totam
+        quasi expedita dolore, exercitationem suscipit ab alias deleniti voluptatum vel blanditiis quaerat aliquid?
+        Officiis, iure a sapiente vel animi reiciendis. Consectetur, quisquam.
+    </div>
+    <p id="no"></p>
+    <script>
+        let i = 0;
+        const box = document.querySelector(".box");
+        box.addEventListener("scroll", (event) => {
+            console.log(event);
+            document.getElementById("no").innerText = `Scroll no - ${++i}`;
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image-container {
+            padding: 1rem;
+            display: flex;
+            flex-flow: row wrap;
+            border: 5px solid black;
+        }
+
+        img {
+            transition: all 100ms;
+        }
+
+        img:hover {
+            transform: scale(1.12);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+
+    </div>
+    <script>
+        const imageContainer = document.querySelector(".image-container");
+        const img = document.createElement("img");
+
+        for (let i = 1; i <= 500; i++) {
+            img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`;
+            img.alt = `Pokemon Image - ${i}`;
+            imageContainer.append(img.cloneNode());
+        }
+
+    </script>
+</body>
+
+</html>

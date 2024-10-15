@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blue {
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+        }
+
+        .green {
+            width: 350px;
+            height: 350px;
+            background-color: green;
+        }
+
+        .red {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .white {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blue">
+        <div class="green">
+            <div class="red">
+                <div class="white"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const blue = document.querySelector(".blue");
+        const green = document.querySelector(".green");
+        const red = document.querySelector(".red");
+        const white = document.querySelector(".white");
+
+        // white.addEventListener("click", (event) => {
+        //     console.log("White event listener");
+        // }, true);
+        // blue.addEventListener("click", (event) => {
+        //     console.log("Blue event listener");
+        // }, true);
+        // green.addEventListener("click", (event) => {
+        //     // event.stopPropagation();
+        //     console.log("Green event listener");
+        // }, true);
+        // red.addEventListener("click", (event) => {
+        //     console.log("Red event listener");
+        // }, true);
+        // document.body.addEventListener("click", () => {
+        //     console.log("Body event listener");
+        // }, true);
+        // document.addEventListener("click", () => {
+        //     console.log("Document event listener");
+        // }, true);
+        // window.addEventListener("click", () => {
+        //     console.log("Window event listener");
+        // }, true)
+
+        white.addEventListener("click", (event) => {
+            console.log("White event listener");
+        }, { capture: true });
+        red.addEventListener("click", (event) => {
+            console.log("Red event listener");
+        }, { capture: true });
+        green.addEventListener("click", (event) => {
+            // event.stopPropagation();
+            console.log("Green event listener");
+        }, { capture: true });
+        blue.addEventListener("click", (event) => {
+            console.log("Blue event listener");
+        }, { capture: true });
+        document.body.addEventListener("click", () => {
+            console.log("Body event listener");
+        }, { capture: true });
+        document.addEventListener("click", () => {
+            console.log("Document event listener");
+        }, { capture: true });
+        window.addEventListener("click", () => {
+            event.stopPropagation();
+            console.log("Window event listener");
+        }, { capture: true })
+    </script>
+</body>
+
+</html>

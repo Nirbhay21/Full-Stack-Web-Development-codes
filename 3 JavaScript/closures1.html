@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const temp = 0;
+
+        function outerFunction() {
+            const a = 5;
+            function parentFunction() {
+                const b = 20;
+                function add() {
+                    const c = 10;
+                    console.log(a + b + c);
+                }
+                return add;
+            }
+            return parentFunction;
+        }
+
+        const copyAdd = outerFunction()();
+
+        console.dir(copyAdd);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

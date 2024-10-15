@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        h2,
+        ul,
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-bar {
+            padding-block: 1em;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.275);
+        }
+
+        .progress-bar {
+            width: 90%;
+            height: 0.6em;
+            margin-top: 1.6em;
+            margin-inline: auto;
+            background-color: rgb(236, 236, 236);
+        }
+
+        .progress-bar>.progress {
+            width: 0%;
+            height: 100%;
+            background-color: rgb(79, 79, 241);
+        }
+
+        .buttons {
+            margin-top: 2em;
+            width: fit-content;
+            margin-inline: auto;
+        }
+
+        .buttons button {
+            padding: 0.6em 2.4em;
+            border-radius: 0.36em;
+            background-color: aqua;
+            border: 1px solid black;
+        }
+
+        .buttons button:not(:last-child) {
+            margin-right: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <h2>Progress bar</h2>
+        </nav>
+    </header>
+    <main>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="buttons">
+            <button id="startBtn">Start</button>
+            <button id="stopBtn">Stop</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+    </main>
+
+    <script>
+        const progress = document.querySelector(".progress-bar .progress");
+        const startBtn = document.querySelector("#startBtn");
+        const stopBtn = document.querySelector("#stopBtn");
+        const resetBtn = document.querySelector("#resetBtn");
+
+        let lastPaintTime = 0;
+
+        let progressValue = 0;
+
+        let progressBarRunning = false;
+
+        const showProgressbar = (currentTime) => {
+            progress.style.width = `${progressValue++/10}%`;
+
+            if (progressValue < 1000 && progressBarRunning) {
+                requestAnimationFrame(showProgressbar);
+            }
+        }
+
+        startBtn.addEventListener("click", () => {
+            progressBarRunning = true;
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+            requestAnimationFrame(showProgressbar);
+        });
+        
+        stopBtn.addEventListener("click", () => {
+            progressBarRunning = false;
+            stopBtn.disabled = true;
+            startBtn.disabled = false;
+        });
+
+        resetBtn.addEventListener("click", () => {
+            progressValue = 0;
+            decimalValue = 0;
+            progressBarRunning = false;
+            progress.style.width = `${progressValue}.${decimalValue}%`;
+            startBtn.disabled = false;
+            stopBtn.disabled = false;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            border: 12px solid black;
+            box-sizing: border-box;
+            /* position: relative; */
+            background-color: aqua;
+        }
+
+        .box {
+            width: 500px;
+            height: 200px;
+            border-radius: 12px;
+            animation-name: change-background-color;
+            position: relative;
+            animation-duration: 3s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            background-color: blue;
+        }
+
+        @keyframes change-background-color {
+            from {
+                top: 0px;
+                left: 0px;
+                background-color: red;
+            }
+
+            to {
+                left: calc(100% - 500px);
+                background-color: blue;
+            }
+        }
+
+        h2 {
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

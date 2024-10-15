@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            background-color: black;
+        }
+
+        .container>.box {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+
+    <script>
+        const container = document.querySelector(".container");
+        const availablePositions = [];
+        for (let i = 0; i < 500; i += 10) {
+            for (let j = 0; j < 500; j += 10) {
+                availablePositions.push([i, j]);
+            }
+        }
+
+        const startSec = new Date().getSeconds();
+
+        const id = setInterval(() => {
+            const box = document.createElement("div");
+            const randomPos = Math.floor(Math.random() * availablePositions.length);
+            box.style.top = `${availablePositions[randomPos][0]}px`;
+            box.style.left = `${availablePositions[randomPos][1]}px`;
+            availablePositions.splice(randomPos, 1);
+            container.appendChild(box);
+            box.classList.add("box");
+
+            if (!availablePositions.length) {
+                clearInterval(id);
+                const endSec = new Date().getSeconds();
+                console.log("Start at = ", startSec);
+                console.log("End at = ", endSec);
+            }
+        }, 1);
+    </script>
+</body>
+
+</html>

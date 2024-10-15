@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="input_text"><br><br>
+    <input type="text" name="input_text"><br><br>
+    <input type="text" name="input_text"><br><br>
+    <input type="text" name="input_text"><br><br>
+    <input type="text" name="input_text"><br><br>
+    <script>
+        const values = [
+            "Input box - 1",
+            "Input box - 2",
+            "Input box - 3",
+            "Input box - 4",
+            "Input box - 5"
+        ];
+        const textInputs = document.querySelectorAll('input');
+        textInputs.forEach((input, i) => {
+            input.value = values[i];
+        });
+
+        // document.getEle
+    </script>
+</body>
+
+</html>

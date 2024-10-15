@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const colors = ["Red", "Green", "Blue", "Yellow", "Orange", "Purple", "Pink", "Brown", "Gray", "Cyan", "Magenta", "Lime"];
+
+        const colorsStartsWithLetterP = colors.filter((color) => {
+            return color.startsWith("P") || color.startsWith("p");
+        });
+        const colorsStartsWithLetterG = colors.filter((color) => {
+            return color.charAt(0) === "G" || color.charAt(0) === "g";
+        });
+
+        const colorsContainLetter_a = colors.filter((color) => {
+            return color.includes("a");
+        });
+        const colorsContainLetter_e = colors.filter((color) => {
+            return color.includes("e");
+        });
+
+        document.write("Color starts with letter P - ", colorsStartsWithLetterP, "<br>")
+        document.write("Color starts with letter G - ", colorsStartsWithLetterG, "<br>")
+        document.write("Colors contain letter 'a' - ", colorsContainLetter_a, "<br>");
+        document.write("Colors contain letter 'e' - ", colorsContainLetter_e, "<br>");
+    </script>
+</head>
+
+
+
+
+<body>
+
+</body>
+
+</html>

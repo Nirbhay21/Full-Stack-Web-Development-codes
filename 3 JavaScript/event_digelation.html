@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            border: 5px solid black;
+            padding: 1rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #addElement {
+            width: 60px;
+            height: 60px;
+            user-select: none;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+            cursor: pointer;
+            transition: transform 120ms ease;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: orange;
+        }
+
+        #addElement:hover {
+            transform: scale(1.04);
+        }
+
+        #addElement:active {
+            background-color: rgb(255, 111, 111);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="addElement" title="Add new box">
+            <h1>+</h1>
+        </div>
+    </div>
+    <script>
+        let boxNo = 1;
+        const container = document.querySelector(".container");
+
+        document.querySelector("#addElement").addEventListener("click", () => {
+            const newBox = document.createElement("div");
+            newBox.classList.add("box");
+            newBox.innerText = ("Box - " + boxNo);
+            container.appendChild(newBox);
+            boxNo++;
+
+            newBox.addEventListener("click", (event) => {
+                event.target.remove();
+            });
+        });
+
+        const boxes = document.getElementsByClassName("box");
+
+
+    </script>
+</body>
+
+</html>

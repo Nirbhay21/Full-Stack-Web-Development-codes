@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function printInfo(name = "Unknown", profession, age) {
+            document.write("Hello, <br>");
+            document.write(`My name is ${name}<br>`);
+            document.write(`My profession is ${profession || "Unknown"}<br>`);
+            document.write(`My age is ${(age) ? age + "years old." : "Unknown"}.<br>`);
+            document.write("------------------------------------<br><br>");
+        }
+
+        const returnValue = printInfo("Nirbhay Marde", "Software Engineer", 19);
+        printInfo("Raj Roy", "Civil Engineer", 24);
+        printInfo();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

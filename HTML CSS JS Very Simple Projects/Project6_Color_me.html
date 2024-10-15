@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2,
+        body {
+            margin: 0px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-bar {
+            padding-block: 1.2em;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.275);
+        }
+
+        .circles-container {
+            width: fit-content;
+            margin-inline: auto;
+            padding: 1.6em;
+            display: grid;
+            gap: 0.5em;
+            font-size: 1.4rem;
+            grid-template-rows: repeat(3, 85px);
+            grid-template-columns: repeat(3, 85px);
+        }
+
+        .circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: rgb(240, 240, 240);
+            border: 1.4px solid rgb(210, 210, 210);
+            transition: all 200ms ease;
+        }
+
+        .circle:hover {
+            transform: scale(1.08);
+            background-color: rgb(225, 225, 225);
+        }
+
+        .footer {
+            font-size: 1em;
+            margin-inline: auto;
+            width: fit-content;
+        }
+
+        #inputNumber {
+            width: 6em;
+            margin-right: 0.4em;
+        }
+
+        #colorBtn {
+            color: white;
+            border-radius: 0.2em;
+            background-color: rgb(0, 123, 255);
+            border-color: rgb(0, 123, 255);
+            border-style: solid;
+        }
+
+        #inputNumber,
+        #colorBtn {
+            padding: 0.2em 0.8em;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .active {
+            color: white;
+            background-color: rgb(0, 128, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <h2>Color Me</h2>
+        </nav>
+    </header>
+    <main>
+        <div class="circles-container">
+            <div class="circle" tag="1">1</div>
+            <div class="circle" tag="2">2</div>
+            <div class="circle" tag="3">3</div>
+            <div class="circle" tag="4">4</div>
+            <div class="circle" tag="5">5</div>
+            <div class="circle" tag="6">6</div>
+            <div class="circle" tag="7">7</div>
+            <div class="circle" tag="8">8</div>
+            <div class="circle" tag="9">9</div>
+        </div>
+        <div class="footer">
+            <form id="form">
+                <input type="number" id="inputNumber" placeholder="Enter" min="1" max="9" required />
+                <button id="colorBtn">Color Me</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const form = document.querySelector("#form");
+        const inputNumber = document.querySelector("#inputNumber");
+        const colorBtn = document.querySelector("#colorBtn");
+
+        const removePreviousActive = () => {
+            const activeCircle = document.querySelector(".circle.active");
+            if (activeCircle) {
+                activeCircle.classList.remove("active");
+            }
+        }
+
+        const highlightCircle = () => {
+            removePreviousActive();
+            const circleNo = inputNumber.value.trim();
+            const circle = document.querySelector(`[tag="${circleNo}"]`);
+            if (circle) {
+                circle.classList.add("active");
+            }
+        }
+
+        const highlightCircleOnKeyDown = (event) => {
+            if (event.code === "Enter") {
+                highlightCircle();
+            }
+        }
+
+        inputNumber.addEventListener("keydown", highlightCircleOnKeyDown);
+        colorBtn.addEventListener("click", highlightCircle);
+
+        form.addEventListener("submit", (event) => {
+            inputNumber.value = "";
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

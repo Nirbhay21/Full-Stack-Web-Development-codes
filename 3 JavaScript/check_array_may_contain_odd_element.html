@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const numbers = prompt("Enter even numbers").split(" ").map((num) => parseInt(num));
+
+        const containFalseNum = numbers.some((num, i) => {
+            console.log(i);
+            return num % 2 != 0;
+        });
+
+        if(containFalseNum){
+            alert("You entered odd number");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

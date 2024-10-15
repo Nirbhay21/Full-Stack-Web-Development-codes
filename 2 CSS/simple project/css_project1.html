@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easyrecipe.com</title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul,
+        p {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 100vw;
+            background-color: #ffffff;
+            background-image: linear-gradient(0deg, #ffffff 0%, #c1fffd 100%);
+        }
+
+        .navContainer {
+            width: 100vw;
+            padding: 1.6rem 2rem;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+        }
+
+        #nav-logo {
+            color: white;
+            font-size: 1.6em;
+        }
+
+        #navList {
+            width: 100%;
+            font-size: 1.4em;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #nav-list>a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        #nav-list {
+            display: flex;
+            gap: 0.92em;
+        }
+
+        .contentBox {
+            width: 80%;
+            height: fit-content;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 0px auto;
+            box-shadow: 1px 6px 10px 1px black;
+            background-color: white;
+            ;
+        }
+
+
+        .item-box {
+            width: 100%;
+            display: flex;
+        }
+
+        .leftBox {
+            width: 50%;
+            padding: 0.6rem 1rem;
+            box-sizing: border-box;
+            border: 2px solid black;
+        }
+
+        .rightBox {
+            width: 50%;
+            height: 300px;
+            position: relative;
+            /* padding: 0.6rem 1rem; */
+            border: 2px solid black;
+            transition: transform 300ms ease-out;
+        }
+
+        .rightBox .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            font-weight: 600;
+            font-size: 1.2rem;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 300ms ease-out;
+        }
+
+        .rightBox .overlay:hover {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.300);
+        }
+
+        .rightBox:hover {
+            transform: scale(1.012);
+        }
+
+        .fit-in-box {
+            width: 100%;
+            height: 100%;
+        }
+
+        .ingredient-list {
+            margin-left: 1.6rem;
+        }
+
+        .footerBox {
+            color: white;
+            padding: 1rem 0px;
+            text-align: center;
+            background-color: #08AEEA;
+            background-image: linear-gradient(0deg, #00bbff 0%, #071061 100%);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="navContainer">
+                <ul id="navList">
+                    <li>
+                        <h2 id="nav-logo">Easyrecipe.com</h2>
+                    </li>
+                    <li>
+                        <div id="nav-list">
+                            <a href="#">Home</a>
+                            <a href="#">Contact</a>
+                            <a href="#">About</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="contentBox">
+                <section>
+                    <div class="item-box">
+                        <div class="leftBox">
+                            <h2 class="item-name">Patate Prezzemolate (Italian Potato Salad)</h2>
+                            <h3>Ingredients</h3>
+                            <ul class="ingredient-list">
+                                <li>25 ounces Yukon Gold potatoes</li>
+                                <li>1 tablespoon coarse sea salt</li>
+                                <li>4 tablespoons extra-virgin olive oil, divided</li>
+                                <li>1 tablespoon white wine vinegar</li>
+                                <li>2 cloves garlic, peeled and slightly crushed</li>
+                                <li>2 green onions (white part only), chopped</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>1 teaspoon red pepper flakes (Optional)</li>
+                            </ul>
+                        </div>
+                        <div class="rightBox">
+                            <div class="overlay">Click Here</div>
+                            <img class="fit-in-box" src="images/dish1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="item-box">
+                        <div class="leftBox">
+                            <h2 class="item-name">French Potato Salad</h2>
+                            <h3>Ingredients</h3>
+                            <ul class="ingredient-list">
+                                <li>25 ounces Yukon Gold potatoes</li>
+                                <li>1 tablespoon coarse sea salt</li>
+                                <li>4 tablespoons extra-virgin olive oil, divided</li>
+                                <li>1 tablespoon white wine vinegar</li>
+                                <li>2 cloves garlic, peeled and slightly crushed</li>
+                                <li>2 green onions (white part only), chopped</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>1 teaspoon red pepper flakes (Optional)</li>
+                            </ul>
+                        </div>
+                        <div class="rightBox">
+                            <div class="overlay">Click Here</div>
+                            <img class="fit-in-box" src="images/dish2.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="item-box">
+                            <div class="leftBox">
+                                <h2 class="item-name">Balsamic Glazed Roasted Potato Salad</h2>
+                                <h3>Ingredients</h3>
+                                <ul class="ingredient-list">
+                                    <li>⅓ cup olive oil</li>
+                                    <li>3 tablespoons balsamic vinegar</li>
+                                    <li>1 tablespoon honey</li>
+                                    <li>1 tablespoon paprika</li>
+                                    <li>1 clove garlic, minced</li>
+                                    <li>2 pounds baby Yukon Gold potatoes, quartered</li>
+                                    <li>½ pound cremini mushrooms, quartered</li>
+                                    <li>1 large sweet onion, chopped</li>
+                                    <li>1 teaspoon red pepper flakes (Optional)</li>
+                                    <li>2 slices bacon</li>
+                                </ul>
+                            </div>
+                            <div class="rightBox">
+                                <div class="overlay">Click Here</div>
+                                <img class="fit-in-box" src="images/dish3.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="item-box">
+                        <div class="leftBox">
+                            <h2 class="item-name">Patate Prezzemolate (Italian Potato Salad)</h2>
+                            <h3>Ingredients</h3>
+                            <ul class="ingredient-list">
+                                <li>25 ounces Yukon Gold potatoes</li>
+                                <li>1 tablespoon coarse sea salt</li>
+                                <li>4 tablespoons extra-virgin olive oil, divided</li>
+                                <li>1 tablespoon white wine vinegar</li>
+                                <li>2 cloves garlic, peeled and slightly crushed</li>
+                                <li>2 green onions (white part only), chopped</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>1 teaspoon red pepper flakes (Optional)</li>
+                            </ul>
+                        </div>
+                        <div class="rightBox">
+                            <div class="overlay">Click Here</div>
+                            <img class="fit-in-box" src="images/dish1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="item-box">
+                        <div class="leftBox">
+                            <h2 class="item-name">French Potato Salad</h2>
+                            <h3>Ingredients</h3>
+                            <ul class="ingredient-list">
+                                <li>25 ounces Yukon Gold potatoes</li>
+                                <li>1 tablespoon coarse sea salt</li>
+                                <li>4 tablespoons extra-virgin olive oil, divided</li>
+                                <li>1 tablespoon white wine vinegar</li>
+                                <li>2 cloves garlic, peeled and slightly crushed</li>
+                                <li>2 green onions (white part only), chopped</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>1 teaspoon red pepper flakes (Optional)</li>
+                            </ul>
+                        </div>
+                        <div class="rightBox">
+                            <div class="overlay">Click Here</div>
+                            <img class="fit-in-box" src="images/dish2.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="item-box">
+                            <div class="leftBox">
+                                <h2 class="item-name">Balsamic Glazed Roasted Potato Salad</h2>
+                                <h3>Ingredients</h3>
+                                <ul class="ingredient-list">
+                                    <li>⅓ cup olive oil</li>
+                                    <li>3 tablespoons balsamic vinegar</li>
+                                    <li>1 tablespoon honey</li>
+                                    <li>1 tablespoon paprika</li>
+                                    <li>1 clove garlic, minced</li>
+                                    <li>2 pounds baby Yukon Gold potatoes, quartered</li>
+                                    <li>½ pound cremini mushrooms, quartered</li>
+                                    <li>1 large sweet onion, chopped</li>
+                                    <li>1 teaspoon red pepper flakes (Optional)</li>
+                                    <li>2 slices bacon</li>
+                                </ul>
+                            </div>
+                            <div class="rightBox">
+                                <div class="overlay">Click Here</div>
+                                <img class="fit-in-box" src="images/dish3.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="item-box">
+                        <div class="leftBox">
+                            <h2 class="item-name">Patate Prezzemolate (Italian Potato Salad)</h2>
+                            <h3>Ingredients</h3>
+                            <ul class="ingredient-list">
+                                <li>25 ounces Yukon Gold potatoes</li>
+                                <li>1 tablespoon coarse sea salt</li>
+                                <li>4 tablespoons extra-virgin olive oil, divided</li>
+                                <li>1 tablespoon white wine vinegar</li>
+                                <li>2 cloves garlic, peeled and slightly crushed</li>
+                                <li>2 green onions (white part only), chopped</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>1 teaspoon red pepper flakes (Optional)</li>
+                            </ul>
+                        </div>
+                        <div class="rightBox">
+                            <div class="overlay">Click Here</div>
+                            <img class="fit-in-box" src="images/dish1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="item-box">
+                        <div class="leftBox">
+                            <h2 class="item-name">French Potato Salad</h2>
+                            <h3>Ingredients</h3>
+                            <ul class="ingredient-list">
+                                <li>25 ounces Yukon Gold potatoes</li>
+                                <li>1 tablespoon coarse sea salt</li>
+                                <li>4 tablespoons extra-virgin olive oil, divided</li>
+                                <li>1 tablespoon white wine vinegar</li>
+                                <li>2 cloves garlic, peeled and slightly crushed</li>
+                                <li>2 green onions (white part only), chopped</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>½ cup very finely chopped flat-leaf parsley</li>
+                                <li>1 teaspoon red pepper flakes (Optional)</li>
+                            </ul>
+                        </div>
+                        <div class="rightBox">
+                            <div class="overlay">Click Here</div>
+                            <img class="fit-in-box" src="images/dish2.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="dish">
+                        <div class="item-box">
+                            <div class="leftBox">
+                                <h2 class="item-name">Balsamic Glazed Roasted Potato Salad</h2>
+                                <h3>Ingredients</h3>
+                                <ul class="ingredient-list">
+                                    <li>⅓ cup olive oil</li>
+                                    <li>3 tablespoons balsamic vinegar</li>
+                                    <li>1 tablespoon honey</li>
+                                    <li>1 tablespoon paprika</li>
+                                    <li>1 clove garlic, minced</li>
+                                    <li>2 pounds baby Yukon Gold potatoes, quartered</li>
+                                    <li>½ pound cremini mushrooms, quartered</li>
+                                    <li>1 large sweet onion, chopped</li>
+                                    <li>1 teaspoon red pepper flakes (Optional)</li>
+                                    <li>2 slices bacon</li>
+                                </ul>
+                            </div>
+                            <div class="rightBox">
+                                <div class="overlay">Click Here</div>
+                                <img class="fit-in-box" src="images/dish3.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footerBox">
+                <p>Copyright &copy 2024 - Easyrecipe.com</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

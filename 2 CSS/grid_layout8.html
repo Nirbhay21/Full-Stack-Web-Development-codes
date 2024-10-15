@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .grid-container {
+            height: 100vh;
+            padding: 1rem;
+            display: grid;
+            gap: 1rem;
+            box-sizing: border-box;
+            grid-template-rows: 1fr repeat(2, 2fr) 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            background-color: rgb(58, 63, 77);
+        }
+
+        .header,
+        .footer {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: rgb(123, 100, 221);
+            background-image: linear-gradient(to right, #1e182c 0%, #2575fc 100%);
+        }
+
+        .side-bar {
+            grid-row-start: 2;
+            grid-row-end: 4;
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+
+        }
+
+        .content-1 {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+        }
+
+        .content-2 {
+            background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+        }
+
+        .content-3 {
+            background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+        }
+
+        .center_text_using_flex {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .border-5px-black {
+            border: 5px solid black;
+        }
+
+        @media only screen and (max-width: 850px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            html {
+                font-size: 12px;
+            }
+
+            .grid-container {
+                grid-template-rows: repeat(6, 1fr);
+                grid-template-columns: 1fr;
+            }
+
+            .header,
+            .footer {
+                grid-column-start: unset;
+                grid-column-end: unset;
+            }
+
+            .side-bar {
+                grid-row-start: unset;
+                grid-row-end: unset;
+
+            }
+
+            .content-1 {
+                grid-column-start: unset;
+                grid-column-end: unset;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header center_text_using_flex border-5px-black">Header</div>
+        <div class="side-bar center_text_using_flex border-5px-black">Sidebar</div>
+        <div class="content-1 center_text_using_flex border-5px-black">Content - 1</div>
+        <div class="content-2 center_text_using_flex border-5px-black">Content - 2</div>
+        <div class="content-3 center_text_using_flex border-5px-black">Content - 3</div>
+        <div class="footer center_text_using_flex border-5px-black">Footer</div>
+    </div>
+</body>
+
+</html>

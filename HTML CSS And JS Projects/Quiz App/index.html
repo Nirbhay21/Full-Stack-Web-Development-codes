@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="scripts/index.js" type="module"></script>
+</head>
+
+<body>
+    <div class="quiz__background">
+        <div class="quiz">
+            <header class="quiz__header">
+                <div class="quiz__logo">
+                    <img src="images/quiz_time.svg" alt="logo_image" width="160px">
+                </div>
+                <button class="quiz__sound-btn">
+                    <img src="icons/sound_icon.svg" alt="sound_icon" width="32px">
+                </button>
+            </header>
+            <main class="quiz__content">
+                <div class="quiz__question-no">
+                    <span>02/25</span>
+                </div>
+                <div class="quiz__question-box">
+                    <p class="quiz__question-text">Inside which HTML element do we put the JavaScript? </p>
+                </div>
+                <div class="quiz__timer">
+                    <span>00:30</span>
+                </div>
+                <div class="quiz__options">
+                    <button class="quiz_option quiz__option--wrong">
+                        <span class="quiz__option-text">js</span>
+                        <span class="quiz__option-chosen">You chose</span>
+                    </button>
+                    <button class="quiz__option quiz__option--correct">
+                        <span class="quiz__option-text">scripting</span>
+                        <span class="quiz__option-chosen"></span>
+                    </button>
+                    <button class="quiz__option">
+                        <span class="quiz__option-text">javascript</span>
+                        <span class="quiz__option-chosen"></span>
+                    </button>
+                    <button class="quiz__option">
+                        <span class="quiz__option-text">script</span>
+                        <span class="quiz__option-chosen"></span>
+                    </button>
+                </div>
+                <button class="quiz__next-button">
+                    <span>Next ></span>
+                </button>
+            </main>
+        </div>
+    </div>
+</body> 
+
+</html>

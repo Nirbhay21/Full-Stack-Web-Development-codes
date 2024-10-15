@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer List</title>
+    <style>
+        h2,
+        ul,
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-bar {
+            padding-block: 1em;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.275);
+        }
+
+        .transfer-list {
+            margin: 1em 5em;
+            display: grid;
+            grid-template-columns: 5fr 1fr 5fr;
+        }
+
+        .transfer-list>div {
+            border: 1px solid black;
+        }
+
+        .transfer-list .list {
+            padding: 1.2em;
+        }
+
+        .transfer-list .list ul {
+            list-style: none;
+        }
+
+        .transfer-list .list ul li:nth-child(1n):not(:last-child) {
+            margin-bottom: 0.6em;
+        }
+
+        .transfer-list .buttons {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .transfer-list .buttons button {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <h2>Transfer List</h2>
+        </nav>
+    </header>
+    <main>
+        <div class="transfer-list">
+            <div class="list" id="list1">
+                <ul>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="chekbox_html">
+                        <label for="chekbox_html">HTML</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="chekbox_css">
+                        <label for="chekbox_css">CSS</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="chekbox_js">
+                        <label for="chekbox_js">JS</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="chekbox_ts">
+                        <label for="chekbox_ts">TS</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <button id="transferAllLeft">&lt;&lt;</button>
+                <button id="transferSelectedLeft" disabled>&lt;</button>
+                <button id="transferSelectedRight" disabled>&gt;</button>
+                <button id="transferAllRight">&gt;&gt;</button>
+            </div>
+            <div class="list" id="list2">
+                <ul>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="checkbox_react">
+                        <label for="checkbox_react">React</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="checkbox_angular">
+                        <label for="checkbox_angular">Angular</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="checkbox_vue">
+                        <label for="checkbox_vue">Vue</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="checkbox_svelte">
+                        <label for="checkbox_svelte">Svelte</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const list1 = document.querySelector("#list1 ul");
+        const list2 = document.querySelector("#list2 ul");
+
+        let list1Items = document.querySelectorAll("#list1 ul li");
+        let list2Items = document.querySelectorAll("#list2 ul li");
+
+        const transferAllLeft = document.querySelector("#transferAllLeft");
+        const transferAllRight = document.querySelector("#transferAllRight");
+        const transferSelectedLeft = document.querySelector("#transferSelectedLeft");
+        const transferSelectedRight = document.querySelector("#transferSelectedRight");
+
+        transferAllLeft.addEventListener("click", () => {
+            list1.append(...list2Items);
+            list1Items = list1.querySelectorAll("li");
+        });
+
+        transferAllRight.addEventListener("click", () => {
+            list2.append(...list1Items);
+            list2Items = list2.querySelectorAll("li");
+        });
+
+        const getSelectedItems = (list, listName) => {
+            let checkedCount = 0;
+
+            for (let item of list) {
+                if (item.firstElementChild.checked) {
+                    checkedCount++;
+                }
+            }
+
+            if (listName === "list1") {
+                if (checkedCount > 0) {
+                    transferSelectedRight.disabled = false;
+                } else {
+                    transferSelectedRight.disabled = true;
+                }
+            } else if (listName === "list2") {
+                if (checkedCount > 0) {
+                    transferSelectedLeft.disabled = false;
+                } else {
+                    transferSelectedLeft.disabled = true;
+                }
+            }
+        }
+
+        const getSelectedItemsInList1 = () => {
+            getSelectedItems(list1Items, "list1");
+        }
+
+        const getSelectedItemsInList2 = () => {
+            getSelectedItems(list2Items, "list2");
+        }
+
+        list1.addEventListener("change", getSelectedItemsInList1)
+
+        list2.addEventListener("change", getSelectedItemsInList2)
+
+        transferSelectedLeft.addEventListener("click", () => {
+            const checkedItems = [...list2Items].filter((item) => item.firstElementChild.checked);
+            list1.append(...checkedItems);
+            transferSelectedLeft.disabled = true;
+            checkedItems.forEach((item) => item.firstElementChild.checked = false);
+            list1Items = list1.querySelectorAll("li");
+        });
+
+        transferSelectedRight.addEventListener("click", () => {
+            const checkedItems = [...list1Items].filter((item) => item.firstElementChild.checked);
+            list2.append(...checkedItems);
+            transferSelectedRight.disabled = true;
+            checkedItems.forEach((item) => item.firstElementChild.checked = false);
+            list2Items = list2.querySelectorAll("li");
+        });
+    </script>
+</body>
+
+</html>

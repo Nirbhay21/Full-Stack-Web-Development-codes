@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border: 5px solid white;
+            background-color: black;
+        }
+
+        .image-box {
+            width: fit-content;
+            padding-top: 0.4rem;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            border: 2px solid white;
+        }
+
+        img {
+            transition: scale 100ms ease;
+        }
+
+        hr {
+            border-width: 1.6px;
+        }
+
+        .image-box:hover img {
+            scale: 1.10;
+        }
+
+        .image-box:hover{
+            border: 2px solid rgb(255, 0, 0);
+        }
+
+        .image-box:hover hr{
+            border: 1.6px solid rgb(255, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        const container = document.querySelector(".container");
+
+        for (let i = 1; i <= 500; i++) {
+            container.innerHTML += `
+                <div class="image-box">
+                    <label>Pokemon-${i}<label>
+                    <hr>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png" alt="Image-${i}">
+                </div>
+            `;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function makeHttpRequest(method, url, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.send();
+            xhr.responseType = "json";
+            xhr.addEventListener("load", () => {
+                callback(xhr.response);
+            });
+        }
+
+        makeHttpRequest("GET", 'https://dummyjson.com/users', (data) => {
+            const userId = data.users[0].id;
+            console.log(data);
+            makeHttpRequest("GET", `https://dummyjson.com/posts/${userId}`, (data) => {
+                const postId = data.id;
+                console.log(data);
+                makeHttpRequest("GET", `https://dummyjson.com/comments/${postId}`, (data) => {
+                    const commentId = data.id;
+                    console.log(data);
+                    makeHttpRequest("GET", `https://dummyjson.com/carts/${commentId}`, (data) => {
+                        console.log(data.products[0]);
+                    });
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const user = {
+            firstName: "Nirbhay",
+            lastName: "Marde",
+            age: 20,
+        }
+
+        const getBirthYear = (age) => {
+            const currentYear = new Date().getFullYear();
+            const birthYear = currentYear - age;
+            return birthYear;
+        }
+
+        console.log("Birth Year:", getBirthYear(user.age));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

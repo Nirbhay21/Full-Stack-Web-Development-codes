@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .end-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-bar {
+            width: 80%;
+            position: relative;
+            height: 2.4rem;
+            border-radius: 1rem;
+            background-color: #AFAFAF;
+            overflow-x: hidden;
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid black;
+        }
+
+        .progress-line {
+            width: 0%;
+            height: 100%;
+            background-color: #00FF00;
+        }
+
+        .progress-percent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="end-container">
+        <div class="progress-bar">
+            <div class="progress-line"></div>
+            <span class="progress-percent">0%</span>
+        </div>
+    </div>
+    <script>
+        const progress = document.querySelector(".progress-line");
+        const progressPercent = document.querySelector(".progress-percent");
+
+        const startProgressBar = (seconds) => {
+            const mils = seconds * 1000;
+            const hundredthPart = mils / 100;
+            let i = 0;
+            const id = setInterval(() => {
+                progress.style.width = `${i}%`;
+                progressPercent.innerText = `${i}%`;
+                if (i == 100) {
+                    clearInterval(id);
+                }
+                i = i + 1;
+            }, hundredthPart);
+        }
+
+        startProgressBar(20);
+    </script>
+</body>
+
+</html>

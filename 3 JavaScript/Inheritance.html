@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class ParentClass {
+            method1() {
+                console.log("Method of parent class");
+            }
+        }
+
+        class ChildClass extends ParentClass {
+            method2() {
+                console.log("Method of child class");
+            }
+        }
+
+        const obj = new ChildClass();
+        console.dir(obj);
+        obj.method1();
+        obj.method2();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

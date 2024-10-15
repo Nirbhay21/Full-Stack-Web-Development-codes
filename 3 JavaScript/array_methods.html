@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+        document.write(arr);
+        document.write("<code>");
+        arr.shift();
+        document.write("<br>", arr);
+        arr.unshift(0);
+        document.write("<br>", arr);
+        const resultArr = arr.concat([10, 20, 30], [100, 200, 300], [1000, 2000, 3000])
+        document.write("<br>resultArr - ", resultArr);
+        document.write("<br>Index of 5 in arr - ", arr.indexOf(5));
+        document.write("<br>Last index Index of 5 in arr - ", arr.lastIndexOf(5));
+        document.write("<br>Reverse of arr - ", arr.reverse(), "<br>");
+
+
+        const arr0 = [1, 2, 3, 4, 5];
+        document.write("Array - ", arr0, "<br>");
+        arr0.reverse();
+        document.write("Array - ", arr0, "<br>");
+
+
+        let tempArr = ["One", "Two", "Three", "Four", "Five"];
+        document.write("Array - ", tempArr, "<br>");
+        tempArr.reverse();
+        document.write("Array - ", tempArr, "<br>");
+
+        tempArr.reverse();
+        document.write("Array - ", tempArr, "<br>")
+        tempArr.sort();
+        document.write("Array after sort() - ", tempArr, "<br><br>")
+
+        tempArr = ["One", "Two", "Three", "Four", "Five"];
+
+        document.write("Array - ", tempArr, "<br>");
+        document.write("Array slice(2) - ", tempArr.slice(2), "<br>");
+        document.write("Array slice(1, 4) - ", tempArr.slice(1, 4), "<br>");
+        document.write("</code>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

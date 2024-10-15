@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class CreateUser {
+            #firstName
+            #lastName
+            #age
+
+            constructor(firstName, lastName, age) {
+                this.#firstName = firstName;
+                this.#lastName = lastName;
+                this.#age = age;
+            }
+
+            displayInfo() {
+                console.log("First name:", this.#firstName);
+                console.log("Last name:", this.#lastName);
+                console.log("Age:", this.#age);
+            }
+
+            static staticProperty = "This is static property";
+
+            static staticMethod() {
+                console.log("staticMethod() called.")
+                console.log("value of this inside static method:", this);
+            }
+        }
+
+        const user = new CreateUser("Nirbhay", "Marde", 20);
+        user.displayInfo();
+
+        console.log("user.staticProperty:", user.staticProperty);   // <-- It will show undefined because staticProperty in only accessible by class.
+
+        console.log("CreateUser.staticProperty:", CreateUser.staticProperty);
+        CreateUser.staticMethod();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

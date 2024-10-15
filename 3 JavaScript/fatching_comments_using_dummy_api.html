@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1,
+        h2,
+        h3,
+        body {
+            margin: 0px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .comment-container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .comment-container .comment {
+            flex-basis: 250px;
+            margin: 0.5em;
+            padding: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+        }
+
+        .comment-body,
+        .comment-likes {
+            margin-left: 12px;
+        }
+
+        .comment-likes {
+            margin-top: 6px;
+            /* margin-right: 1em; */
+            width: fit-content;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="comment-container">    Reference
+        <div class="comment">
+            <h3 class="comment-writer">Full Name -</h3>
+            <span class="comment-body">This is some awesome thinking!</span>
+            <span class="comment-likes">Likes: </span>
+        </div>
+    </div> -->
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", 'https://dummyjson.com/comments');
+        xhr.send();
+        xhr.responseType = "json";
+
+        const commentContainer = document.createElement("div");
+        commentContainer.classList.add("comment-container");
+        
+        
+        xhr.addEventListener("load", () => {
+            const commentsArr = xhr.response.comments;
+            
+            for (let i = 0; i < commentsArr.length; i++) {
+                const comment = document.createElement("div");
+                comment.classList.add("comment");
+                const commentWriter = document.createElement("h3");
+                commentWriter.classList.add("comment-writer");
+                commentWriter.innerText = commentsArr[i]["user"]["fullName"];
+                const commentBody = document.createElement("span");
+                commentBody.classList.add("comment-body");
+                commentBody.innerText = commentsArr[i]["body"];
+                const commentLikes = document.createElement("span");
+                commentLikes.classList.add("comment-likes");
+                commentLikes.innerHTML = `<b>Likes:</b> ${commentsArr[i]["likes"]}`;
+                
+                comment.appendChild(commentWriter);
+                comment.appendChild(commentBody);
+                comment.appendChild(commentLikes);
+                
+                commentContainer.appendChild(comment);
+            }
+            
+            document.body.appendChild(commentContainer);
+        })
+
+
+    </script>
+</body>
+
+</html>

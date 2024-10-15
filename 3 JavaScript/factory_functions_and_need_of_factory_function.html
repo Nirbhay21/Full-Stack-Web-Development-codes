@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // const user1 = {
+        //     firstName: "Nirbhay",
+        //     lastName: "Marde",
+        //     age: 20,
+
+        //     getBirthYear: () => {
+        //         const currentYear = new Date().getFullYear();
+        //         const birthYear = currentYear - user1.age;
+        //         return birthYear;
+        //     }
+        // }
+
+        // const user2 = {
+        //     firstName: "Harshal",
+        //     lastName: "Marde",
+        //     age: 17,
+
+        //     getBirthYear: () => {
+        //         const currentYear = new Date().getFullYear();
+        //         const birthYear = currentYear - user2.age;
+        //         return birthYear;
+        //     }
+        // }
+
+        const getUser = (firstName, lastName, age) => {
+            const user = {
+                firstName,
+                lastName,
+                age,
+
+                getBirthYear() {
+                    const currentYear = new Date().getFullYear();
+                    const birthYear = currentYear - user.age;
+                    return birthYear;
+                }
+            }
+            return user;
+        }
+
+        // console.log("Birth Year:", user1.getBirthYear());
+        // console.log("Birth Year:", user2.getBirthYear());
+
+        const user1 = getUser("Nirbhay", "Marde", 20);
+        const user2 = getUser("Harshal", "Marde", 17);
+
+        console.log(user1);
+        console.log(user2);
+
+        console.log("Birth Year of user1:", user1.getBirthYear());
+        console.log("Birth Year of user2:", user2.getBirthYear());
+
+        console.log(user1.getBirthYear === user2.getBirthYear);
+
+        const arr1 = [1, 2, 3, 4, 5];
+        const arr2 = arr1;
+
+        console.log(arr1 === arr2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="heading">Heading</h1>
+    <h1 class="heading">Heading</h1>
+    <h1 class="heading">Heading</h1>
+    <h1>Heading</h1>
+    <h1>Heading</h1>
+    <script>
+        const headings = document.getElementsByClassName("heading");
+
+        for (let i = 0; i < headings.length; i++) {
+            headings[i].innerText = `Heading - ${i + 1}`;
+            console.log(headings[i]);
+        }
+    </script>
+</body>
+
+</html>

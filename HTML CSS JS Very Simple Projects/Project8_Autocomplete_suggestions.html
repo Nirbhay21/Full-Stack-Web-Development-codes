@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typeahead / Autocomplete (offline)</title>
+    <style>
+        h2,
+        body {
+            margin: 0px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-bar {
+            padding-block: 1.2em;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.275);
+        }
+
+        main p {
+            text-align: center;
+        }
+
+        main .search-box {
+            width: 70%;
+            max-width: 600px;
+            margin-inline: auto;
+            display: flex;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        main .search-box span {
+            visibility: hidden;
+            position: absolute;
+            right: 3%;
+            top: 38%;
+            transform: translateY(-50%);
+            font-size: 1.8em;
+            font-weight: 700;
+            background: -webkit-linear-gradient(purple, blue);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            align-self: center;
+            cursor: pointer;
+        }
+
+        main input {
+            width: 100%;
+            font-size: 1em;
+            padding: 0.5em 1em;
+            display: block;
+        }
+
+        main .search-box .visible {
+            visibility: visible;
+        }
+
+        main .suggestions-box {
+            width: 100%;
+            top: 110%;
+            position: absolute;
+        }
+
+        main .suggestions-box .suggestion {
+            margin: 0.2em 0px 0px 0px;
+            padding: 0.5em 1em;
+            text-align: start;
+            background-color: rgb(245, 245, 220);
+        }
+
+        main .suggestions-box .suggestion.highlight {
+            background-color: rgb(240, 230, 140);
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <h2>Typeahead / Autocomplete (offline)</h2>
+        </nav>
+    </header>
+    <main>
+        <p>Use up & down arrows to navigate on suggestions</p>
+        <div class="search-box">
+            <input type="text" id="searchBox" placeholder="Search for Country">
+            <span class="reset-searchBox">&times;</span>
+            <div class="suggestions-box">
+
+            </div>
+        </div>
+    </main>
+    <script>
+        const searchBox = document.querySelector("#searchBox");
+        const resetSearchBox = document.querySelector(".search-box .reset-searchBox");
+        const suggestionBox = document.querySelector(".search-box .suggestions-box");
+
+        const allCountriesName = [];
+
+        const suggestions = [];
+
+        let countrySuggestions = [];
+        let selectedSuggestion = -1;
+
+        fetch("https://restcountries.com/v3.1/all")
+            .then((request) => request.json())
+            .then((countriesData) => {
+                for (let i = 0; i < countriesData.length; i++) {
+                    allCountriesName.push(countriesData[i].name.common);
+                }
+            }).catch((error) => {
+                console.log("Error during fetch data -", error);
+            });
+
+        resetSearchBox.addEventListener("click", (event) => {
+            searchBox.value = "";
+            searchBox.focus();
+            event.target.classList.remove("visible");
+        });
+
+        const showSuggestions = (filterBy) => {
+            suggestions.splice(0, suggestions.length);
+
+            const filteredCountries = allCountriesName.filter((country) => country.startsWith(filterBy));
+            countrySuggestions = [...filteredCountries];
+
+            for (let i = 0; i < filteredCountries.length; i++) {
+                const suggestion = document.createElement("p");
+                suggestion.classList.add("suggestion");
+                suggestion.innerText = filteredCountries[i];
+                suggestions.push(suggestion);
+            }
+
+            if (filterBy) {
+                suggestionBox.innerHTML = "";
+                suggestionBox.append(...suggestions);
+            } else {
+                suggestionBox.innerHTML = "";
+            }
+        }
+
+        searchBox.addEventListener("input", (event) => {
+            const searchName = event.target.value.charAt(0).toUpperCase() + event.target.value.slice(1);
+
+            if (searchName) {
+                document.querySelector(".search-box>span").classList.add("visible");
+            } else {
+                suggestionBox.innerHTML = "";
+                suggestions.splice(0, suggestions.length);
+                selectedSuggestion = -1;
+                document.querySelector(".search-box>span").classList.remove("visible");
+            }
+
+            showSuggestions(searchName);
+        });
+
+        searchBox.addEventListener("blur", (event) => {
+            suggestionBox.innerHTML = "";
+            suggestions.splice(0, suggestions.length);
+            selectedSuggestion = -1;
+        });
+
+        searchBox.addEventListener("keydown", (event) => {
+            if (event.code === "ArrowUp" && selectedSuggestion >= 0) {
+                selectedSuggestion--;
+            } else if (event.code === "ArrowDown" && selectedSuggestion < countrySuggestions.length - 1) {
+                selectedSuggestion++;
+            } else if (event.code === "Enter") {
+                suggestionBox.innerHTML = "";
+                suggestions.splice(0, suggestions.length);
+            }
+
+            const highlightSuggestion = () => {
+                const removePreviousHighlight = () => {
+                    const previousHighlighted = document.querySelector(".highlight");
+                    if (previousHighlighted) {
+                        previousHighlighted.classList.remove("highlight");
+                    }
+                }
+
+                removePreviousHighlight();
+
+                if (selectedSuggestion >= 0 && selectedSuggestion < suggestions.length) {
+                    suggestions[selectedSuggestion].classList.add("highlight");
+                    searchBox.value = suggestions[selectedSuggestion].innerText;
+                }
+            }
+            highlightSuggestion();
+        });
+    </script>
+</body>
+
+</html>

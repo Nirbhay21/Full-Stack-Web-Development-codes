@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="#username">Username: </label>
+    <input type="text" name="username" id="username">
+    <p class="para">Username change to: </p>
+
+    <script>
+        const username = document.querySelector("input[type='text']");
+        const para = document.querySelector(".para");
+
+        username.addEventListener("change", (event) => {
+            console.log("Change event called.");
+            para.innerText = `Username change to: ${event.target.value}`;
+            console.log(event.type);
+        });
+
+        
+    </script>
+</body>
+
+</html>

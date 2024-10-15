@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0px;
+        }
+
+        .end-container {
+            width: calc(100vw - 18px);
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header-container {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .card-container {
+            width: 80vw;
+            margin: 0px auto;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        @media only screen and (max-width: 1450px) {
+            .card-container {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .card-container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        @media only screen and (max-width: 650px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+
+            .end-container {
+                width: calc(100vw);
+            }
+        }
+
+        .card {
+            border: 3px solid black;
+        }
+
+        .card-information-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.60rem;
+            padding: 0.2rem 0.80rem;
+        }
+
+        .card-title {
+            color: black;
+            font-size: 1.2rem;
+        }
+
+        .card-description {
+            font-size: 0.80rem;
+        }
+
+        .card-information-container a {
+            text-decoration: none;
+        }
+
+        .card-footer-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-footer-container img {
+            width: 48px;
+            height: 48px;
+            margin-left: -0.5rem;
+            margin-right: 0.5rem;
+            display: flex;
+        }
+
+        .author-info {
+            font-size: 0.80rem;
+        }
+
+        .card-author-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .card-tag {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            background-color: #FFFFFF00;
+        }
+
+        .block {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="end-container">
+        <header>
+            <div class="header-container">
+                <h1 class="header-title">Daily Blogs</h1>
+                <p class="header-description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum
+                    voluptatem adipisci deserunt, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                    sedconsequuntur Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae laborum veniam
+                    earum! Quasi repellendus aut error. Porro, in! dolorem.</p>
+            </div>
+        </header>
+        <main>
+            <div class="card-container">
+                <div class="card">
+                    <a href="#">
+                        <img src="https://picsum.photos/300/200" alt="card 1 image"
+                            class="card_image" loading="lazy" width="100%">
+                    </a>
+                    <div class="card-information-container">
+                        <a href="#">
+                            <h2 class="card-title">Discovering the World</h2>
+                        </a>
+                        <p class="card-description">Ah, the allure of travel an enchanting call beckoning adventurers to
+                            distant lands,
+                            captivating cultures, and awe-inspiring landscapes....</p>
+                        <div class="card-footer-container">
+                            <div class="card-author-info">
+                                <div class="avatar-container">
+                                    <img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=64" alt="">
+                                </div>
+                                <div class="author-info">
+                                    <span class="block">Jack Alexander</span>
+                                    <span class="block">Augest 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-author-tag">
+                                <button class="card-tag">Travel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="https://picsum.photos/300/200" alt="card 1 image"
+                            class="card_image" loading="lazy" width="100%">
+                    </a>
+                    <div class="card-information-container">
+                        <a href="#">
+                            <h2 class="card-title">Discovering the World</h2>
+                        </a>
+                        <p class="card-description">Ah, the allure of travel an enchanting call beckoning adventurers to
+                            distant lands,
+                            captivating cultures, and awe-inspiring landscapes....</p>
+                        <div class="card-footer-container">
+                            <div class="card-author-info">
+                                <div class="avatar-container">
+                                    <img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=64" alt="">
+                                </div>
+                                <div class="author-info">
+                                    <span class="block">Jack Alexander</span>
+                                    <span class="block">Augest 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-author-tag">
+                                <button class="card-tag">Travel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="https://picsum.photos/300/200" alt="card 1 image"
+                            class="card_image" loading="lazy" width="100%">
+                    </a>
+                    <div class="card-information-container">
+                        <a href="#">
+                            <h2 class="card-title">Discovering the World</h2>
+                        </a>
+                        <p class="card-description">Ah, the allure of travel an enchanting call beckoning adventurers to
+                            distant lands,
+                            captivating cultures, and awe-inspiring landscapes....</p>
+                        <div class="card-footer-container">
+                            <div class="card-author-info">
+                                <div class="avatar-container">
+                                    <img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=64" alt="">
+                                </div>
+                                <div class="author-info">
+                                    <span class="block">Jack Alexander</span>
+                                    <span class="block">Augest 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-author-tag">
+                                <button class="card-tag">Travel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="https://picsum.photos/300/200" alt="card 1 image"
+                            class="card_image" loading="lazy" width="100%">
+                    </a>
+                    <div class="card-information-container">
+                        <a href="#">
+                            <h2 class="card-title">Discovering the World</h2>
+                        </a>
+                        <p class="card-description">Ah, the allure of travel an enchanting call beckoning adventurers to
+                            distant lands,
+                            captivating cultures, and awe-inspiring landscapes....</p>
+                        <div class="card-footer-container">
+                            <div class="card-author-info">
+                                <div class="avatar-container">
+                                    <img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=64" alt="">
+                                </div>
+                                <div class="author-info">
+                                    <span class="block">Jack Alexander</span>
+                                    <span class="block">Augest 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-author-tag">
+                                <button class="card-tag">Travel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="https://picsum.photos/300/200" alt="card 1 image"
+                            class="card_image" loading="lazy" width="100%">
+                    </a>
+                    <div class="card-information-container">
+                        <a href="#">
+                            <h2 class="card-title">Discovering the World</h2>
+                        </a>
+                        <p class="card-description">Ah, the allure of travel an enchanting call beckoning adventurers to
+                            distant lands,
+                            captivating cultures, and awe-inspiring landscapes....</p>
+                        <div class="card-footer-container">
+                            <div class="card-author-info">
+                                <div class="avatar-container">
+                                    <img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=64" alt="">
+                                </div>
+                                <div class="author-info">
+                                    <span class="block">Jack Alexander</span>
+                                    <span class="block">Augest 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-author-tag">
+                                <button class="card-tag">Travel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="https://picsum.photos/300/200" alt="card 1 image"
+                            class="card_image" loading="lazy" width="100%">
+                    </a>
+                    <div class="card-information-container">
+                        <a href="#">
+                            <h2 class="card-title">Discovering the World</h2>
+                        </a>
+                        <p class="card-description">Ah, the allure of travel an enchanting call beckoning adventurers to
+                            distant lands,
+                            captivating cultures, and awe-inspiring landscapes....</p>
+                        <div class="card-footer-container">
+                            <div class="card-author-info">
+                                <div class="avatar-container">
+                                    <img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=64" alt="">
+                                </div>
+                                <div class="author-info">
+                                    <span class="block">Jack Alexander</span>
+                                    <span class="block">Augest 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-author-tag">
+                                <button class="card-tag">Travel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="https://picsum.photos/300/200" alt="card 1 image"
+                            class="card_image" loading="lazy" width="100%">
+                    </a>
+                    <div class="card-information-container">
+                        <a href="#">
+                            <h2 class="card-title">Discovering the World</h2>
+                        </a>
+                        <p class="card-description">Ah, the allure of travel an enchanting call beckoning adventurers to
+                            distant lands,
+                            captivating cultures, and awe-inspiring landscapes....</p>
+                        <div class="card-footer-container">
+                            <div class="card-author-info">
+                                <div class="avatar-container">
+                                    <img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=64" alt="">
+                                </div>
+                                <div class="author-info">
+                                    <span class="block">Jack Alexander</span>
+                                    <span class="block">Augest 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-author-tag">
+                                <button class="card-tag">Travel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="https://picsum.photos/300/200" alt="card 1 image"
+                            class="card_image" loading="lazy" width="100%">
+                    </a>
+                    <div class="card-information-container">
+                        <a href="#">
+                            <h2 class="card-title">Discovering the World</h2>
+                        </a>
+                        <p class="card-description">Ah, the allure of travel an enchanting call beckoning adventurers to
+                            distant lands,
+                            captivating cultures, and awe-inspiring landscapes....</p>
+                        <div class="card-footer-container">
+                            <div class="card-author-info">
+                                <div class="avatar-container">
+                                    <img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=64" alt="">
+                                </div>
+                                <div class="author-info">
+                                    <span class="block">Jack Alexander</span>
+                                    <span class="block">Augest 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-author-tag">
+                                <button class="card-tag">Travel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
+
+<!-- <img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=643325" alt="avatar">
+<img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=643325" alt="avatar">
+<img src="https://api.dicebear.com/8.x/lorelei/svg?seed=Felix?size=643325" alt="avatar"> -->

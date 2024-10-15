@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Heading</h1>
+    <script>
+        setInterval(() => {
+            console.log("Interval");
+        }, 500);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://httpbin.org/delay/5", false);
+        xhr.send();
+
+        console.log(xhr.response);
+    </script>
+
+</body>
+
+</html>

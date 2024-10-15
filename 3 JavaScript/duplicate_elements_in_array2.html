@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = [1, 2, 3, 4, 5, 6, 3, 2, 0, 5, 9];
+        const duplicates = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr.includes(arr[i], i + 1)) {
+                if (!duplicates.includes(arr[i])) {
+                    duplicates.push(arr[i]);
+                }
+            }
+        }
+
+        document.write("array - ", arr, "<br>");
+        document.write("duplicateElements - ", duplicates, "<br>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

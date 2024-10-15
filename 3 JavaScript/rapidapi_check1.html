@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe with API</title>
+    <script>
+        const data = new FormData();
+        data.append('player', 'X');
+        data.append('0-0', 'X');
+        data.append('0-1', 'X');
+        data.append('0-2', 'O');
+        data.append('1-0', 'O');
+        data.append('1-1', 'O');
+        data.append('1-2', 'X');
+        data.append('2-0', 'X');
+        data.append('2-1', 'O');
+
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener('readystatechange', function () {
+            if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open('POST', 'https://tic-tac-toe-ai.p.rapidapi.com/move');
+        xhr.setRequestHeader('x-rapidapi-key', '43c55bced1mshb7ae64009819f19p11a816jsn13665117dcf8');
+        xhr.setRequestHeader('x-rapidapi-host', 'tic-tac-toe-ai.p.rapidapi.com');
+
+        xhr.send(data);
+    </script>
+</head>
+
+<body>
+    <h1>Tic-Tac-Toe with API</h1>
+</body>
+
+</html>

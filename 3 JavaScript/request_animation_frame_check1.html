@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.requestAnimationFrame()</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1 class="num"></h1>
+    <script>
+        const number = document.querySelector(".num");
+
+        let num = 0;
+        let framePaintTime = 0;
+
+        function paint(currentTime) {
+            number.innerText = ++num;
+            
+            if (currentTime) {
+                console.log(currentTime - framePaintTime);
+                framePaintTime = currentTime;
+            }
+
+            if (num < 500) {
+                requestAnimationFrame(paint);
+            }
+        }
+
+        window.requestAnimationFrame(paint);
+    </script>
+</body>
+
+</html>

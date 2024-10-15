@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .end-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            padding: 2rem;
+            box-sizing: border-box;
+            border-radius: 16px;
+            background-color: rgba(48, 208, 208, 0.300) ;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            animation: move-box 2s infinite 200ms;
+            background-color: white;
+        }
+
+        @keyframes move-box {
+            0%{
+                left: 0px;
+                top: 0px;
+            }
+            25%{
+                top: 0px;
+                left:calc(100% - 50px);
+                
+            }
+            50%{
+                left:calc(100% - 50px);
+                top:calc(100% - 50px);
+            }
+            75%{
+                top:calc(100% - 50px);
+                left: 0px;
+            }
+            100%{
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="end-container">
+        <div class="container">
+            <div class="box"></div>
+        </div>
+    </div>
+</body>
+
+</html>

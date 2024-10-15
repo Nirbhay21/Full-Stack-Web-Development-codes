@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+
+        .box {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 20px;
+            height: 20px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script>
+        const position = { x: 0, y: 0 };
+        const box = document.querySelector(".container>.box");
+
+        window.addEventListener("keydown", (event) => {
+            if (event.code === "ArrowUp") {
+
+            } else if (event.code === "ArrowDown") {
+
+            } else if (event.code === "ArrowLeft") {
+
+            } if (event.code === "ArrowRight") {
+
+            }
+        });
+
+        let i = 0;
+
+        setInterval(() => {
+            if (position.x < 500) {
+                box.style.left = `${position.x}px`;
+                position.x += 20;
+            }
+            // console.log(box);
+        }, 100);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+h2,
+h3,
+p,
+body {
+    margin: 0;
+}
+
+body {
+    margin: 0px;
+    font-family: Nunito, sans-serif;
+}
+
+.header {
+    padding: 1em 2em;
+    box-shadow: 0px 0.1em 0.6em 0px rgba(0, 0, 0, 0.150);
+}
+
+.header__content {
+    max-width: 76em;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__title {
+    font-size: 1em;
+    font-weight: 800;
+}
+
+.header__color-mode-btn {
+    cursor: pointer;
+    font-size: 0.76em;
+    border-style: none;
+    background-color: transparent;
+}
+
+
+.main {
+    max-width: 76em;
+    padding: 1em 2em;
+    margin-inline: auto;
+}
+
+.countries-cards {
+    margin-inline: auto;
+    padding-block: 1em;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.country-card {
+    color: inherit;
+    display: block;
+    overflow: hidden;
+    flex-basis: 13em;
+    border-radius: 0.36em;
+    text-decoration-line: none;
+    box-shadow: 0px 0em 0.6em 0px rgba(0, 0, 0, 0.200);
+    transition: transform 120ms ease;
+}
+
+.country-card:hover {
+    transform: scale(1.02);
+    background-color: yellow;
+}
+
+.country-card__flag {
+    width: 100%;
+}
+
+.country-card__text {
+    padding: 1em 1em 1.4em;
+}
+
+.country-card__name {
+    font-size: 1em;
+    padding-bottom: 0.6em;
+}
+
+.country-card__text p {
+    font-size: 0.8em;
+    margin-bottom: 0.36em;
+}
+
+
+@media screen and (min-width: 375px) {
+    body {
+        font-size: 1.12em;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    .header{
+        font-size: 1.1em;
+    }
+
+    body {
+        font-size: 1.20em;
+    }
+
+    .countries-cards {
+        gap: 1.5em;
+    }
+
+    .country-card {
+        flex-basis: 13em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        font-size: 1.15em;
+    }
+
+    body {
+        font-size: 1.36em;
+    }
+
+    .countries-cards {
+        gap: 2em;
+    }
+
+    .country-card {
+        flex-basis: 13em;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    body {
+        font-size: 1.42em;
+    }
+
+    .countries-cards {
+        gap: 2em;
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class CreateUser {
+            constructor(firstName, lastName, age) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+
+            printFullName() {
+                console.log("Full Name:", this.firstName, this.lastName);
+            }
+
+            printData() {
+                console.log("First name:", this.firstName);
+                console.log("Last name:", this.lastName);
+                console.log("Age:", this.age);
+            }
+        }
+
+        const user = new CreateUser("Nirbhay", "Marde", 20);
+
+        user.printFullName()
+        user.printData();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

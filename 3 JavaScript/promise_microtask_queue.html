@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        setTimeout(() => {
+            console.log("Timeout completed.");
+        });
+
+        const p1 = new Promise((resolve, reject) => {
+            resolve("Promise-1 resolved.");
+        });
+
+        p1.then((data) => {
+            console.log(data);
+        })
+        const p2 = new Promise((resolve, reject) => {
+            resolve("Promise-2 resolved.");
+        });
+
+        p2.then((data) => {
+            console.log(data);
+        })
+        const p3 = new Promise((resolve, reject) => {
+            resolve("Promise-3 resolved.");
+        });
+
+        p3.then((data) => {
+            console.log(data);
+        })
+        const p4 = new Promise((resolve, reject) => {
+            resolve("Promise-4 resolved.");
+        });
+
+        p4.then((data) => {
+            console.log(data);
+        })
+
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

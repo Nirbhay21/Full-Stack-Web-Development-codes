@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0px;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            background-color: rgb(149, 0, 255);
+        }
+
+        .container>.box {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script>
+        const box = document.querySelector(".box");
+
+        let posX = 0;
+        let posY = 0;
+
+        const moveBy = 5;
+        const maxBoundary = 250;
+
+        function moveBox() {
+            if (posX < maxBoundary && posY === 0) {
+                posX += moveBy;
+                box.style.left = `${posX}px`;
+            } else if (posX === maxBoundary && posY >= 0 && posY < maxBoundary) {
+                posY += moveBy;
+                box.style.top = `${posY}px`;
+            } else if (posY === maxBoundary && posX > 0) {
+                posX -= moveBy;
+                box.style.left = `${posX}px`;
+            } else if(posY > 0 && posX === 0){
+                posY -= moveBy;
+                box.style.top = `${posY}px`;
+            }
+            requestAnimationFrame(moveBox)
+        }
+
+        setTimeout(() => {
+            window.requestAnimationFrame(moveBox);
+        }, 600);
+    </script>
+</body>
+
+</html>

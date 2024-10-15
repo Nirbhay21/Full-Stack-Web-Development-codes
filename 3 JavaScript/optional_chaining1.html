@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const user = {
+            firstName: "Nirbhay",
+            lastName: "Marde",
+            age: 25,
+            address: {
+                city: "Sangamner"
+            }
+        }
+
+        // console.log("First name: ", user.firstName);
+        // console.log("Last name: ", user.lastName);
+        // console.log("Age: ", user.age);
+
+        // if (user.address) {
+        //     console.log(user.address.city);
+        // }
+
+        // console.log(user.address && user.address.city);
+
+
+        // With optional chaining - 
+        const c = "city";
+        console.log(user.address?.city);
+        console.log(user.address?.["city"]);
+        console.log(user.address?.[c]);
+
+    </script>
+</body>
+
+</html>

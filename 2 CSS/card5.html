@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        h2,
+        p {
+            margin: 0px;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        }
+
+        .card {
+            width: 950px;
+            height: 400px;
+            display: flex;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(69, 9, 68);
+        }
+
+        .leftBox {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            padding: 3rem;
+            box-sizing: border-box;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .heading{
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+
+        .stats-row {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .stat-nums {
+            font-weight: bolder;
+            font-size: 1.4rem;
+        }
+
+        .rightBox {
+            width: 50%;
+            height: 100%;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .center-text{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="leftBox">
+                <h2 class="heading">Get insights that help your business grow</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae culpa rerum quam sit! Odio magnam
+                    laborum cum neque ullam vero sint exercitationem maxime eius animi. Neque itaque veniam tempore.</p>
+                <div class="stats-row">
+                    <div class="comments-box">
+                        <p class="stat-nums">10K+</p>
+                        <p>Comments</p>
+                    </div>
+                    <div class="users-box">
+                        <p class="stat-nums">214</p>
+                        <p>Paid Users</p>
+                    </div>
+                    <div class="views-box">
+                        <p class="stat-nums">12M+</p>
+                        <p>Views</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rightBox">
+                <img class="card-image" src="images/image1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

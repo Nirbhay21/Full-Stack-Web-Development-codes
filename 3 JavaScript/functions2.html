@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function additionOf(num1, num2) {
+            num1 = +num1;
+            num2 = +num2;
+            const result = num1 + num2;
+            document.write(`${num1} + ${num2} = ${result}<br>`);
+            return result;
+        }
+
+        function subtractionOf(num1, num2){
+            return num1 - num2;
+        }
+
+        additionOf(12, 100);
+        document.write("12 - 7 = ", subtractionOf(12, 7), "<br>");
+
+        additionOf(additionOf(10, 90), additionOf(30, 20));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

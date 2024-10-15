@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4.2rem;
+            font-weight: 900;
+        }
+
+        .light-mode {
+            color: black;
+            border: 5px solid black;
+            background-color: rgb(255, 255, 0);
+        }
+
+        .dark-mode {
+            color: white;
+            background-color: black;
+            border: 5px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container light-mode">
+        This is Text
+    </div>
+    <script>
+        function changeMode() {
+            const container = document.querySelector(".container");
+            if (container.className.endsWith("light-mode")) {
+                container.className = container.className.replace("light-mode", "dark-mode");
+            } else {
+                container.className = container.className.replace("dark-mode", "light-mode");
+            }
+        }
+    </script>
+</body>
+
+</html>

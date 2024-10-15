@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // const p = new Promise((resolve, rejected) => {
+        //     resolve("Promise Fulfilled");
+        //     // rejected("Promise Rejected!");
+        // });
+        // console.log(p);
+
+        const p = new Promise((resolve, rejected) => {
+            setTimeout(() => {
+                resolve("Promise Resolved.");
+            }, 3000);
+        })
+
+        // setInterval(() => {
+        //     console.log(p);
+        // }, 500);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

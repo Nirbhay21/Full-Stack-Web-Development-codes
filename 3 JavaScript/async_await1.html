@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // async function makeRequest() {
+        //     throw new Error("Request Error");
+        // }
+
+        async function makeRequest() {
+            const response = await fetch("https://httpbin.org/delay/3")
+            // .then((req) => req.json())
+            // .then((data) => {
+            //     console.log(data.origin);
+            // });
+
+            console.log(response);
+            console.log("Hello");
+        }
+
+
+        function printHello() {
+            console.log("HELLO-1");
+            console.log("HELLO-2");
+            console.log("HELLO-3");
+        }
+
+        setInterval(() => {
+            console.log("Interval");
+        }, 1000);
+
+        function hi() {
+            console.log("First line");
+            console.log("Second line");
+        }
+
+        makeRequest();
+
+        printHello();
+
+        // hi();
+    </script>
+
+</body>
+
+</html>

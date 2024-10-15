@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function makeHttpRequest(method, url, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.send();
+            xhr.responseType = "json";
+
+            const promise = new Promise((resolve, reject) => {
+                xhr.addEventListener("load", () => {
+                    resolve(xhr.response);
+                });
+                xhr.addEventListener("error", () => {
+                    reject("ERROR");
+                })
+            });
+
+            return promise;
+        }
+
+        // makeHttpRequest("GET", 'https://dummyjson.com/users', (data) => {
+        //     const userId = data.users[0].id;
+        //     console.log(data);
+        //     makeHttpRequest("GET", `https://dummyjson.com/posts/${userId}`, (data) => {
+        //         const postId = data.id;
+        //         console.log(data);
+        //         makeHttpRequest("GET", `https://dummyjson.com/comments/${postId}`, (data) => {
+        //             const commentId = data.id;
+        //             console.log(data);
+        //             makeHttpRequest("GET", `https://dummyjson.com/carts/${commentId}`, (data) => {
+        //                 console.log(data.products[0]);
+        //             });
+        //         });
+        //     });
+        // });
+
+        const result = makeHttpRequest("GET", 'https://dummyjson.com/users').then(usersData => {
+            const userId = usersData.users[0].id;
+            console.log(usersData);
+            return makeHttpRequest("GET", `https://dummyjson.com/posts/${userId}`);
+        }).then((data) => {
+            const postId = data.id;
+            console.log(data);
+            return makeHttpRequest("GET", `https://dummyjson.com/comments/${postId}`);
+        }).then((data) => {
+            const commentId = data.id;
+            console.log(data);
+            return makeHttpRequest("GET", `https://dummyjson.com/carts/${commentId}`);
+        }).then((data) => {
+            console.log(data);
+        }).catch((error) => {
+            console.log("ERROR");
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -7,6 +7,6 @@
         @apply font-body;
     }
     h1, h2, h3 {
-        @apply font-display text-gray-800 font-medium;
+        @apply font-display font-medium text-gray-800;
     }
 }

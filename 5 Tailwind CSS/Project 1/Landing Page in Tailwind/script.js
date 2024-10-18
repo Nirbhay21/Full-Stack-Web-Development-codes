@@ -10,7 +10,11 @@ const line3 = document.querySelector("#line3");
 const line4 = document.querySelector("#line4");
 
 function handleMenu() {
-  hamburgerMenu.classList.toggle("hidden");
+  if (hamburgerMenu.classList.toggle("hidden")) {
+    document.body.style.overflow = "auto";
+  } else {
+    document.body.style.overflow = "hidden";
+  }
 }
 
 menuBtn.addEventListener("click", handleMenu);
@@ -54,3 +58,17 @@ setupIntersectionObserver(line2, false, 0.15);
 setupIntersectionObserver(line3, true, 0.15);
 
 setupIntersectionObserver(line4, true, 0.75);
+
+
+
+const dtElements = document.querySelectorAll("dt");
+dtElements.forEach((element) => {
+  element.addEventListener("click", (event) => {
+    const dtArrowIcon = element.querySelector("img");
+    const ddId = element.getAttribute("aria-controls");
+    const ddElement = document.querySelector(`#${ddId}`);
+
+    ddElement.classList.toggle("hidden");
+    dtArrowIcon.classList.toggle("-rotate-180"); 
+  });
+});

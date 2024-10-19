@@ -12,7 +12,7 @@
 <body class="overflow-scroll">
   <header>
     <!-- NavBar -->
-    <nav class="flex items-center justify-between bg-white px-6 py-3">
+    <nav class="flex items-center justify-between bg-white px-6 py-3 shadow-md">
       <a href="#" id="brand" class="flex flex-1 items-center gap-2">
         <img src="images/brand_logo.png" alt="brand_logo" class="object-cover" />
         <span class="font-display text-lg font-bold">ToDesktop</span>
@@ -69,7 +69,7 @@
 
   <main>
     <!-- Hero Section -->
-    <div id="hero" class="to-transparents mb-24 bg-gradient-to-b from-purple-50 via-orange-50 sm:pt-5">
+    <div id="hero" class="to-transparents mb-12 bg-gradient-to-b from-purple-50 via-orange-50 sm:pt-5">
       <div id="hero-container" class="mx-auto flex max-w-4xl flex-col px-6 pb-24 pt-5 sm:items-center sm:text-center">
         <div id="version-text"
           class="group my-6 flex w-fit items-center gap-2 rounded-lg border border-yellow-300 bg-yellow-50 px-3 py-1 shadow-md transition duration-75 hover:-translate-y-1 hover:shadow-lg">
@@ -319,104 +319,102 @@
 
     <!-- Step by step Section -->
     <div id="steps" class="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-12 lg:px-8">
-      <h2 class="mb-8 text-5xl sm:font-semibold">How It Works</h2>
-      <div id="step1" class="flex flex-col items-center gap-9 rounded-xl border px-8 py-12 shadow-sm lg:flex-row">
+      <h2 class="text-3xl font-semibold md:text-4xl lg:text-5xl">How It Works</h2>
+      <div id="step1"
+        class="flex flex-col items-center gap-9 rounded-xl border p-6 shadow-sm lg:flex-row lg:justify-between lg:px-8 lg:py-12">
         <div class="flex flex-col gap-6 lg:w-1/2">
           <span
             class="w-fit rounded-lg border border-yellow-300 bg-yellow-50 px-3 py-1 font-display font-medium text-yellow-800">Step
             1</span>
-          <h3 class="text-4xl">Bootstrap straight from your web app</h3>
-          <p class="text-lg font-light">
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl">Bootstrap straight from your web app</h3>
+          <p class="font-light lg:text-lg">
             Copy and paste your web app url into ToDesktop. Customize your app
             design, app icon and window frame UI with no code.
           </p>
-          <ul class="grid grid-cols-2 gap-2">
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Multiple
+          <ul class="grid grid-cols-2 gap-2 text-xs font-light sm:text-sm md:text-base">
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Multiple
                 windows</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Customisable
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Customisable
                 menus</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Menubar/tray
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Menubar/tray
                 menus</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Launch on
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Launch on
                 startup</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="text-lg font-light">Offline support</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a>Offline support</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="text-lg font-light">Tabs (Mac only)</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a>Tabs (Mac only)</a>
             </li>
           </ul>
         </div>
-        <div class="">
+        <div>
           <img src="images/step1_image.svg" alt="step1_image" />
         </div>
       </div>
-      <div id="step2" class="flex flex-col items-center gap-9 rounded-xl border px-8 py-12 shadow-sm lg:flex-row">
+      <div id="step2"
+        class="flex flex-col items-center gap-9 rounded-xl border p-6 shadow-sm lg:flex-row lg:justify-between lg:px-8 lg:py-12">
         <div class="flex flex-col gap-6 lg:w-1/2">
           <span
             class="w-fit rounded-lg border border-yellow-300 bg-yellow-50 px-3 py-1 font-display font-medium text-yellow-800">Step
             2</span>
-          <h3 class="text-4xl">Add desktop code to customize your web app</h3>
-          <p class="text-lg font-light">
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl">Add desktop code to customize your web app</h3>
+          <p class="font-light lg:text-lg">
             No need to create a new repository, just add code from our desktop
             APIs to your codebase and get access to system level
             functionality.
           </p>
-          <ul class="grid grid-cols-2 gap-2">
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Native
+          <ul class="grid grid-cols-2 gap-2 text-xs font-light sm:text-sm md:text-base">
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Native
                 notifications</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Global
-                keyboard shortcuts</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">keyboard shortcuts</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Menubar/tray
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Menubar/tray
                 menus</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Application
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Application
                 menu</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Context
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Context
                 menu</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a
-                class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Dock/Icon</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Dock/Icon</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">File system
-                access
-              </a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">File access</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">…plus more
-                APIs in our docs</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">more
+                APIs in docs</a>
             </li>
           </ul>
         </div>
@@ -424,42 +422,42 @@
           <img src="images/step1_image.svg" alt="step1_image" />
         </div>
       </div>
-      <div id="step3" class="flex flex-col items-center gap-9 rounded-xl border px-8 py-12 shadow-sm lg:flex-row">
+      <div id="step3"
+        class="flex flex-col items-center gap-9 rounded-xl border p-6 shadow-sm lg:flex-row lg:justify-between lg:px-8 lg:py-12">
         <div class="flex flex-col gap-6 lg:w-1/2">
           <span
             class="w-fit rounded-lg border border-yellow-300 bg-yellow-50 px-3 py-1 font-display font-medium text-yellow-800">Step
             3</span>
-          <h3 class="text-4xl">Publish 🚀</h3>
-          <p class="text-lg font-light">
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl">Publish 🚀</h3>
+          <p class="font-light lg:text-lg">
             One-click will publish your desktop app to your customers and give
             you a download link to put on your website.
           </p>
-          <ul class="grid grid-cols-2 gap-2">
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="text-lg font-light">Super-fast global CDN</a>
+          <ul class="grid grid-cols-2 gap-2 text-xs font-light sm:text-sm md:text-base">
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a>Super-fast CDN</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Download
-                links on your domain</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">Download
+                links</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="border-b border-black border-opacity-30 text-lg font-light hover:border-opacity-80">Magic
-                universal links</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a class="border-b border-black border-opacity-30 hover:border-opacity-80">universal links</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="text-lg font-light">Download analytics</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a>Download analytics</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="text-lg font-light">Offline support</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a>Offline support</a>
             </li>
-            <li class="flex gap-4">
-              <img src="images/checked_icon.svg" alt="checked_icon" width="20" />
-              <a class="text-lg font-light">Tabs (Mac only)</a>
+            <li class="flex gap-2 sm:gap-4">
+              <img src="images/checked_icon.svg" alt="checked_icon" class="w-3 sm:w-4 lg:w-5" />
+              <a>Tabs (Mac only)</a>
             </li>
           </ul>
         </div>
@@ -471,7 +469,7 @@
 
     <!-- Bento Grid -->
     <div id="bento-grid" class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-      <h2 class="mb-8 text-5xl sm:font-semibold">
+      <h2 class="mb-6 text-3xl sm:font-semibold md:text-4xl lg:mb-8 lg:text-5xl">
         ToDesktop handles the details
       </h2>
       <div id="grid-container" class="flex grid-cols-3 grid-rows-5 flex-col gap-6 lg:grid">
@@ -571,7 +569,7 @@
 
     <!-- Testimonials -->
     <div id="testimonials" class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-      <h2 class="mb-8 text-5xl sm:font-semibold">Customer Stories</h2>
+      <h2 class="mb-6 text-3xl sm:font-semibold md:text-4xl lg:mb-8 lg:text-5xl">Customer Stories</h2>
       <div id="clickup-container"
         class="mb-24 flex flex-col items-center overflow-hidden rounded-2xl border lg:flex-row">
         <div id="clickup-left" class="flex flex-col gap-12 p-8 lg:w-1/2">
@@ -614,7 +612,7 @@
             in no time. Their expert team guided us through a smooth migration from our outdated legacy desktop app,
             enabling us to deliver <span class="text-gray-900">new and improved features</span> to our customers within
             days.”</p>
-          <div id="user-card" class="flex gap-4">
+          <div id="user-card" class="flex gap-2 sm:gap-4">
             <div class="w-12">
               <img src="./images/testmonials_click_up_user_image.avif" alt="testimonials_click_up_user_image"
                 class="rounded-full">
@@ -718,7 +716,7 @@
       <div id="ready-to-start-container" class="flex flex-col items-center rounded-2xl bg-black lg:flex-row">
         <div id="clickup-left" class="flex flex-1 flex-col gap-4 p-8 lg:gap-6 lg:p-8 xl:p-12">
           <h6 class="font-display font-semibold text-gray-400">READY TO START BUILDING?</h6>
-          <h2 class="text-4xl font-semibold leading-tight text-white xl:text-5xl">Create your desktop app for free*</h2>
+          <h2 class="mb-2 text-3xl text-white sm:text-5xl sm:font-semibold lg:mb-4">Create your desktop app for free*</h2>
           <p class="font-medium text-gray-300 xl:text-lg">ToDesktop Builder will take you step-by-step through the
             process of
             creating your first desktop
@@ -740,7 +738,7 @@
 
     <!-- Pricing -->
     <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-      <h2 class="mb-8 max-w-xl text-5xl sm:font-semibold">Choose a plan that fits your needs</h2>
+      <h2 class="mb-6 text-3xl sm:font-semibold md:text-4xl lg:mb-8 lg:text-5xl">Choose a plan that fits your needs</h2>
       <div id="pricing-card-container" class="flex flex-col gap-8 lg:flex-row">
         <div id="pricing-card1"
           class="flex flex-1 flex-col rounded-xl border-2 from-slate-50 via-blue-50 to-blue-100 px-8 py-12 pb-8 lg:border-none lg:bg-gradient-to-b lg:shadow-sm">
@@ -834,12 +832,13 @@
 
     <!-- FAQ -->
     <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-      <h2 class="mb-8 max-w-xl text-5xl sm:font-semibold">FAQ's</h2>
+      <h2 class="mb-6 text-3xl sm:font-semibold md:text-4xl lg:mb-8 lg:text-5xl">FAQ's</h2>
       <div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-1">
             <p class="text-lg font-semibold">Is ToDesktop For Me?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-1" class="mt-6 hidden text-lg font-light">
             <p class="mb-4">
@@ -852,7 +851,8 @@
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-2">
             <p class="text-lg font-semibold">Can i try ToDesktop without buying?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-2" class="mt-6 hidden text-lg font-light">
             <p>Yes. You can get started by downloading ToDesktop Builder at no cost. After installing it, you can build
@@ -863,7 +863,8 @@
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-3">
             <p class="text-lg font-semibold">Do you collect or store data about my customers?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-3" class="mt-6 hidden text-lg font-light">
             <p>No. When a ToDesktop app opens it contacts the our servers to check if an update is available. We do not
@@ -873,7 +874,8 @@
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-4">
             <p class="text-lg font-semibold">Does ToDesktop work with sites built with ___?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-4" class="mt-6 hidden text-lg font-light">
             <ul class="mb-4 list-inside list-disc">
@@ -893,7 +895,8 @@
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-5">
             <p class="text-lg font-semibold">What features are on the product roadmap?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-5" class="mt-6 hidden text-lg font-light">
             <p>If you have any suggestions, we’d love to hear! Please send us an email at support@todesktop.com or send
@@ -903,7 +906,8 @@
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-6">
             <p class="text-lg font-semibold">How does ToDesktop work under the hood?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-6" class="mt-6 hidden text-lg font-light">
             <p>It can help to think of ToDesktop as a custom web browser dedicated to your web app or website. It shows
@@ -916,7 +920,8 @@
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-7">
             <p class="text-lg font-semibold">Will my app work offline?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-7" class="mt-6 hidden text-lg font-light">
             <p>Think of ToDesktop as a normal browser that is just for your website. Your website will work exactly as
@@ -928,7 +933,8 @@
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-8">
             <p class="text-lg font-semibold">Which version of Electron/Chromium is used?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-8" class="mt-6 hidden text-lg font-light">
             <p>ToDesktop is currently based on Chromium 118 and Electron 27. When Electron releases a new version you
@@ -939,7 +945,8 @@
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-9">
             <p class="text-lg font-semibold">What support do you offer?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-9" class="mt-6 hidden text-lg font-light">
             <p>We’ll do our best to help you with any issue you encounter with ToDesktop. You can get in touch with us
@@ -952,17 +959,48 @@
         <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
           <dt class="flex cursor-pointer items-center justify-between" aria-controls="faq-10">
             <p class="text-lg font-semibold">How does my app get updated?</p>
-            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24" class="ml-4 -rotate-180 transition-transform duration-300">
+            <img src="images/drop_down_icon.svg" alt="drop_down_icon" width="24"
+              class="ml-4 -rotate-180 transition-transform duration-300">
           </dt>
           <dd id="faq-10" class="mt-6 hidden text-lg font-light">
-            <p>Every time your app launches it contacts the ToDesktop update server. If there is a newer version available then it gets downloaded automatically. The user gets a notification that the new version will be installed the next time that they open the app.</p>
+            <p>Every time your app launches it contacts the ToDesktop update server. If there is a newer version
+              available then it gets downloaded automatically. The user gets a notification that the new version will be
+              installed the next time that they open the app.</p>
           </dd>
         </div>
       </div>
     </div>
   </main>
 
-  <footer></footer>
+  <footer class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+    <div class="flex flex-col">
+      <div
+        class="mb-20 flex flex-col items-center gap-6 rounded-xl border bg-slate-100 px-6 py-8 shadow-sm lg:flex-row lg:justify-between">
+        <a href="#" id="footer-brand-logo" class="order-2 mt-2 flex flex-1 items-center gap-2 lg:order-1 lg:mt-0">
+          <img src="images/brand_logo.png" alt="brand_logo" class="object-cover" />
+          <span class="font-display text-lg font-bold">ToDesktop</span>
+        </a>
+        <div class="flex flex-col items-center gap-8 lg:order-2 lg:flex-row lg:gap-12">
+          <a href="#">
+            <span class="font-semibold text-gray-600 hover:text-primary">Documentation</span>
+          </a>
+          <div id="footer-links" class="flex gap-12">
+            <a href="#">
+              <img src="images/x_logo.svg" alt="x_logo" width="24" class="w-6">
+            </a>
+            <a href="#">
+              <img src="images/git_icon.svg" alt="git_icon" width="24" class="w-6">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 flex items-center justify-center gap-3">
+        <img src="images/ay_company_logo.svg" alt="ay_company_logo" width="20">
+        <p class="text-sm text-gray-600">A Y Combinator company.</p>
+      </div>
+      <p class="text-center text-sm text-gray-400">&copy; 2024 ToDesktop, Inc. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 
 </html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            padding: 2rem;
+            height: 100vh;
+            max-width: 1200px;
+            margin-inline: auto;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            box-sizing: border-box;
+            justify-content: space-between;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container span {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .container h2 {
+            margin-top: 6px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .buttons button {
+            font-size: 3rem;
+            padding: 0.12rem 1rem 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <span>100 apples</span>
+            <h2>Left Basket</h2>
+        </div>
+        <div class="buttons">
+            <button id="leftBtn" title="shift 1 apple to left basket">&leftarrow;</button>
+            <button id="rightBtn" title="shift 1 apple to right basket">&rightarrow;</button>
+        </div>
+        <div class="right">
+            <span>0 apples</span>
+            <h2>Right Basket</h2>
+        </div>
+    </div>
+
+    <script>
+        const leftBasketElement = document.querySelector(".container .left");
+        const rightBasketElement = document.querySelector(".container .right");
+        const leftBasketApplesNo = leftBasketElement.querySelector("span");
+        const rightBasketApplesNo = rightBasketElement.querySelector("span");
+        const leftBtn = document.querySelector("#leftBtn");
+        const rightBtn = document.querySelector("#rightBtn");
+
+        class Basket {
+            constructor(apples) {
+                this.apples = apples;
+            }
+        }
+
+        const leftBasket = new Basket(100);
+        const rightBasket = new Basket(0);
+
+        const updateDOM = () => {
+            leftBasketApplesNo.innerText = `${leftBasket.apples} apples`;
+            rightBasketApplesNo.innerText = `${rightBasket.apples} apples`;
+        }
+
+        const shiftToRight = () => {
+            if (leftBasket.apples > 0) {
+                leftBasket.apples--;
+                rightBasket.apples++;
+                updateDOM();
+            }
+        }
+
+        const shiftToLeft = () => {
+            if (rightBasket.apples > 0) {
+                rightBasket.apples--;
+                leftBasket.apples++;
+                updateDOM();
+            }
+        }
+
+        leftBtn.addEventListener("click", shiftToLeft);
+        rightBtn.addEventListener("click", shiftToRight);
+    </script>
+</body>
+
+</html>

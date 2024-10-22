@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        // const listItems = [];
+        // for(let i = 1; i <= 4; i++){
+        //     const li = React.createElement("li", {className: "list__item", key: `item${i}`}, `List item - ${i}`);
+        //     listItems.push(li);
+        // }
+        // const ul =  React.createElement("ul", {className: "list"}, [...listItems]);
+        const root = ReactDOM.createRoot(document.querySelector("#root"));
+
+        const ul = {
+            "$$typeof": Symbol.for('react.element'),
+            "type": "ul",
+            "ref": null,
+            "props": {
+                "className": "list",
+                "children": [
+                    {
+                        "$$typeof": Symbol.for('react.element'),
+                        "type": "li",
+                        "ref": null,
+                        "props": {
+                            "className": "list__item",
+                            "children": "list item - 1"
+                        },
+                    },
+                    {
+                        "$$typeof": Symbol.for('react.element'),
+                        "type": "li",
+                        "ref": null,
+                        "props": {
+                            "className": "list__item",
+                            "children": "list item - 2"
+                        },
+                    },
+                    {
+                        "$$typeof": Symbol.for('react.element'),
+                        "type": "li",
+                        "ref": null,
+                        "props": {
+                            "className": "list__item",
+                            "children": "list item - 3"
+                        },
+                    },
+                    {
+                        "$$typeof": Symbol.for('react.element'),
+                        "type": "li",
+                        "ref": null,
+                        "props": {
+                            "className": "list__item",
+                            "children": "list item - 4"
+                        },
+                    },
+                ]
+            },
+        }
+
+        root.render(ul);
+    </script>
+</body>
+
+</html>

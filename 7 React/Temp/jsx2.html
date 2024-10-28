@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="babel.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = ReactDOM.createRoot(document.querySelector("#root"));
+
+        let username = "Nirbhay";
+
+        const heading = (
+            <div className="container">
+                <h1 style={{ color: "red", backgroundColor: "black" }}>My name is {username}</h1>
+                <p>This is paragraph</p>
+            </div>
+        );
+
+        const randomNo = (
+            <h1 id="random-no">{Math.random()}</h1>
+        )
+
+        // root.render(heading);
+        root.render(randomNo);
+    </script>
+</body>
+
+</html>

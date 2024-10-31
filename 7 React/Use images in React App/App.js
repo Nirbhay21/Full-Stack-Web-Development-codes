@@ -1,8 +1,13 @@
 import React from "react"
+import AppleCounter from "./components/AppleCounter";
+import Counter from "./components/Counter";
 
 const App = () => {
     return (
-        <div>Hello</div>
+        <div>
+            <Counter />
+            <AppleCounter />
+        </div>
     );
 }
 

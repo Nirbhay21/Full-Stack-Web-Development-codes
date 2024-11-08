@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client"
 import App from "./App"
 import Home from "./components/Home";
 import Error from "./components/Error";
-import ContactPage from "./components/ContactPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import CountryDetails from "./components/CountryDetails";
 
 const router = createBrowserRouter([
     {
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "/contact",
-                element: <ContactPage />
+                path: "/countryDetails",
+                element: <CountryDetails />
             }
         ]
     },

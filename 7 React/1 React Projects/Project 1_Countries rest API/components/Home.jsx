@@ -14,12 +14,7 @@ export default function Home() {
                 <SearchBar setSearchName={setSearchName} />
                 <DropDownList setFilterRegion={setFilterRegion} />
             </section>
-
-            {
-                (searchName !== "ind") ? (
-                    < CountryCardContainer filterRegion={filterRegion} searchName={searchName} />
-                ) : "Removed!"
-            }
+            < CountryCardContainer filterRegion={filterRegion} searchName={searchName} />
         </main>
     )
 }

@@ -1,4 +1,4 @@
-export default function LightModeIcon({ className }) {
+export default function DarkModeIcon({ className }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width={512} height={512} x={0} y={0} viewBox="0 0 24.007 24.007" style={{ enableBackground: "new 0 0 512 512" }} xmlSpace="preserve" className={className}>
             <g>

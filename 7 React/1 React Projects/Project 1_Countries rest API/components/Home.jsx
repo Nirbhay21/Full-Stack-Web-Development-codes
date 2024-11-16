@@ -9,12 +9,14 @@ export default function Home() {
     const [searchName, setSearchName] = useState("");
 
     return (
-        <main className="mx-auto max-w-screen-2xl p-8 dark:bg-gray-900 sm:p-10 lg:px-16">
-            <section className="mb-8 flex flex-col items-start gap-6 sm:flex-row sm:justify-between">
-                <SearchBar setSearchName={setSearchName} />
-                <DropDownList setFilterRegion={setFilterRegion} />
-            </section>
-            < CountryCardContainer filterRegion={filterRegion} searchName={searchName} />
+        <main className='flex-grow dark:bg-dark-secondary'>
+            <div className="mx-auto max-w-screen-2xl p-8 sm:p-10 lg:px-16">
+                <section className="mb-8 flex flex-col items-start gap-6 sm:flex-row sm:justify-between">
+                    <SearchBar setSearchName={setSearchName} />
+                    <DropDownList setFilterRegion={setFilterRegion} />
+                </section>
+                <CountryCardContainer filterRegion={filterRegion} searchName={searchName} />
+            </div>
         </main>
     )
 }

@@ -18,7 +18,10 @@ module.exports = {
       },
       boxShadow: {
         "light-blur": "0px 0px 8px 0px var(--light-box-shadow)",
-        "light-blur-bottom": "0px 1px 6px 0px var(--light-box-shadow)"
+        "dark-blur": "0px 0px 6px 0px var(--dark-box-shadow)",
+
+        "dark-blur-bottom": "0px 1px 6px 0px var(--dark-box-shadow)",
+        "light-blur-bottom": "0px 1px 6px 0px var(--light-box-shadow)",
       }
     },
   },

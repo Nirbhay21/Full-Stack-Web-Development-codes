@@ -11,8 +11,9 @@
         --bg-dark-primary: #1e293b;
         --bg-dark-secondary: #111827;
         --dark-text-primary: white;
-        --dark-text-secondary: red;
+        --dark-text-secondary: #d1d1d1;
 
         --light-box-shadow: rgb(200, 200, 200);
+        --dark-box-shadow: rgba(0, 0, 0, 0.350);
     }
 }
